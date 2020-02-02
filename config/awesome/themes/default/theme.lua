@@ -91,6 +91,7 @@ theme.menu_width  = dpi(100)
 -- beautiful.variable in your rc.lua
 --theme.bg_widget = "#cc0000"
 theme.maximized_hide_border = true
+theme.border_radius = dpi(8)
 
 -- Define the image to load
 theme.titlebar_close_button_normal = theme_path.."titlebar/close_normal.png"

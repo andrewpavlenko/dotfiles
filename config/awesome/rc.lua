@@ -22,6 +22,9 @@ require("awful.hotkeys_popup.keys")
 local debian = require("debian.menu")
 local has_fdo, freedesktop = pcall(require, "freedesktop")
 
+-- Helper functions
+local helpers = require("helpers")
+
 -- {{{ Error handling
 -- Check if awesome encountered an error during startup and fell back to
 -- another config (This code will only ever execute for the fallback config)
@@ -530,7 +533,24 @@ client.connect_signal("manage", function (c)
         -- Prevent clients from being unreachable after screen count changes.
         awful.placement.no_offscreen(c)
     end
+
+    -- Round corners
+    if not c.fullscreen and not c.maximized then
+        c.shape = helpers.rrect(beautiful.border_radius)
+    end
 end)
+
+-- Do not roud corners for fullscreen and maximized clients
+local function no_round_corners (c)
+    if c.fullscreen or c.maximized then
+        c.shape = gears.shape.rectangle
+    else
+        c.shape = helpers.rrect(beautiful.border_radius)
+    end
+end
+
+client.connect_signal("property::fullscreen", no_round_corners)
+client.connect_signal("property::maximized", no_round_corners)
 
 -- Add a titlebar if titlebars_enabled is set to true in the rules.
 client.connect_signal("request::titlebars", function(c)
