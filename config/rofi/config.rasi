@@ -1,5 +1,5 @@
 configuration {
-/*	modi: "window,run,ssh";*/
+	modi: "window,drun,ssh";
 /*	width: 50;*/
 /*	lines: 15;*/
 /*	columns: 1;*/
@@ -11,7 +11,7 @@ configuration {
 /*	xoffset: 0;*/
 /*	fixed-num-lines: true;*/
 /*	show-icons: false;*/
-/*	terminal: "rofi-sensible-terminal";*/
+	terminal: "alacritty";
 /*	ssh-client: "ssh";*/
 /*	ssh-command: "{terminal} -e {ssh-client} {host}";*/
 /*	run-command: "{cmd}";*/
@@ -50,7 +50,7 @@ configuration {
 /*	window-format: "{w}    {i}{c}   {t}";*/
 /*	click-to-exit: true;*/
 /*	show-match: true;*/
-/*	theme: ;*/
+	theme: "One";
 /*	color-normal: ;*/
 /*	color-urgent: ;*/
 /*	color-active: ;*/
