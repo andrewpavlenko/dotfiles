@@ -2,19 +2,20 @@ local wibox = require("wibox")
 local beautiful = require("beautiful")
 local awful = require("awful")
 local gears = require("gears")
+local helpers = require("helpers")
+
+local fg = beautiful.xcolor2
+local padding = 5
 
 local function layoutbox(screen)
   local name = awful.layout.getname(screen.selected_tag.layout)
   local textbox = wibox.widget.textbox(name)
+  textbox.markup = helpers.colorize_text(name, fg)
   local widget = wibox.widget {
-      {
-          textbox,
-          left = 5,
-          right = 5,
-          widget = wibox.container.margin
-      },
-      bg = "#ffffff",
-      widget = wibox.container.background
+      textbox,
+      left = padding,
+      right = padding,
+      widget = wibox.container.margin
   }
 
   widget:buttons(gears.table.join(
@@ -25,11 +26,11 @@ local function layoutbox(screen)
 
   awful.tag.attached_connect_signal(screen, "property::layout", function(t)
     local name = awful.layout.getname(t.layout)
-    textbox.text = name
+    textbox.markup = helpers.colorize_text(name, fg)
   end)
   awful.tag.attached_connect_signal(screen, "property::selected", function(t)
     local name = awful.layout.getname(t.layout)
-    textbox.text = name
+    textbox.markup = helpers.colorize_text(name, fg)
   end)
 
   return widget
