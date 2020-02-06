@@ -45,7 +45,7 @@
 #message {
     border:       2px 0px 0px;
     border-color: @separatorcolor;
-    padding:      1px;
+    padding:      0;
 }
 #textbox {
     text-color: @foreground;
@@ -54,7 +54,7 @@
     fixed-height: 0;
     border:       0px 0px 0px;
     border-color: @separatorcolor;
-    spacing:      2px ;
+    spacing:      0;
     scrollbar:    false;
     padding:      2px 0px 0px;
 }
@@ -105,7 +105,7 @@
     padding:      0;
 }
 #sidebar {
-    border:       2px 0px 0px;
+    border:       0px 0px 0px;
     border-color: @separatorcolor;
 }
 #button.selected {
