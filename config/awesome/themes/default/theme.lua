@@ -31,7 +31,7 @@ theme.xcolor13    = xrdb.color13    or "#825ECE"
 theme.xcolor14    = xrdb.color14    or "#62CDCD"
 theme.xcolor15    = xrdb.color15    or "#E0E5E5"
 
-theme.font          = "sans 8"
+theme.font          = "Ubuntu Medium 8"
 
 theme.bg_normal     = theme.xbackground
 theme.bg_focus      = theme.xbackground
