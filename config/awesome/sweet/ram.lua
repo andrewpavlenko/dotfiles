@@ -3,6 +3,8 @@ local awful = require("awful")
 local beautiful = require("beautiful")
 local helpers = require("helpers")
 
+local color = beautiful.sweet_ram_color or "#61afef"
+
 local textbox = wibox.widget.textbox("")
 textbox.font = "Ubuntu Nerd Font 8"
 
@@ -17,7 +19,7 @@ local ram = awful.widget.watch("cat /proc/meminfo", 10, function(widget, stdout)
   local used = math.floor(used_kb / 1024 + 0.5)
 
   local text = " " .. used .. "MB"
-  widget.markup = helpers.colorize_text(text, beautiful.xcolor4)
+  widget.markup = helpers.colorize_text(text, color)
 end, textbox)
 
 local widget = wibox.widget {

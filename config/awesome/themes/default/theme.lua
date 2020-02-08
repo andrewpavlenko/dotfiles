@@ -64,6 +64,11 @@ theme.border_marked = theme.xbackground
 --theme.taglist_bg_focus = "#ff0000"
 theme.hotkeys_modifiers_fg = "#5c6370"
 
+-- Sweet widgets
+theme.sweet_layout_color = theme.xcolor15
+theme.sweet_battery_color = theme.xcolor1
+theme.sweet_ram_color = theme.xcolor3
+
 -- Generate taglist squares:
 local taglist_square_size = dpi(4)
 theme.taglist_squares_sel = theme_assets.taglist_squares_sel(
