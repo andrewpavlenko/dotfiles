@@ -62,6 +62,7 @@ theme.border_marked = theme.xbackground
 -- hotkeys_[bg|fg|border_width|border_color|shape|opacity|modifiers_fg|label_bg|label_fg|group_margin|font|description_font]
 -- Example:
 --theme.taglist_bg_focus = "#ff0000"
+theme.taglist_fg_empty = "#5c6370"
 theme.hotkeys_modifiers_fg = "#5c6370"
 
 -- Sweet widgets
