@@ -2,6 +2,7 @@ local wibox = require("wibox")
 local awful = require("awful")
 local beautiful = require("beautiful")
 local helpers = require("helpers")
+local gears = require("gears")
 
 local color = beautiful.sweet_ram_color or "#61afef"
 
@@ -28,5 +29,8 @@ local widget = wibox.widget {
     right = 5,
     widget = wibox.container.margin
 }
+
+widget:buttons(gears.table.join(
+    awful.button({ }, 1, function() awful.spawn.with_shell("alacritty -e htop") end)))
 
 return widget
