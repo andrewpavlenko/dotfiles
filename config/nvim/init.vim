@@ -5,6 +5,7 @@ call plug#begin('~/.vim/plugged')
 
 Plug 'itchyny/lightline.vim'
 Plug 'joshdick/onedark.vim'
+Plug 'sheerun/vim-polyglot'
 
 " Initialize plugin system
 call plug#end()
