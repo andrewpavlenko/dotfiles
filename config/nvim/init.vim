@@ -28,3 +28,6 @@ let g:lightline = {
       \ }
 
 colorscheme onedark
+
+" Show line numbers
+set number
