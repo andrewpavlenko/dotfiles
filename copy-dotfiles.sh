@@ -27,6 +27,7 @@ cp -r $HOME/.config/ranger ./config
 cp -r $HOME/.config/alacritty ./config
 cp -r $HOME/.config/redshift ./config
 cp -r $HOME/.config/rofi ./config
+cp -r $HOME/.config/nvim ./config
 cp $HOME/.config/compton.conf ./config
 
 # Copy binaries
