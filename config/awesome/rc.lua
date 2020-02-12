@@ -130,6 +130,7 @@ mytextclock = wibox.widget.textclock()
 local layoutbox = require("sweet.layoutbox")
 local mybattery = require("sweet.battery")
 local myram = require("sweet.ram")
+local myvolume = require("sweet.volume")
 
 -- Create a wibox for each screen and add it
 local taglist_buttons = gears.table.join(
@@ -196,6 +197,7 @@ awful.screen.connect_for_each_screen(function(s)
         nil, -- Middle widget
         { -- Right widgets
             layout = wibox.layout.fixed.horizontal,
+            myvolume,
             myram,
             mybattery,
             mykeyboardlayout,
