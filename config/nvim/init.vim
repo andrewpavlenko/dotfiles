@@ -6,6 +6,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'itchyny/lightline.vim'
 Plug 'joshdick/onedark.vim'
 Plug 'sheerun/vim-polyglot'
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 
 " Initialize plugin system
 call plug#end()
@@ -31,3 +32,6 @@ colorscheme onedark
 
 " Show line numbers
 set number
+
+" Enable autocomplete
+let g:deoplete#enable_at_startup = 1
