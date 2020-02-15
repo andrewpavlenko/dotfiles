@@ -132,6 +132,9 @@ local mybattery = require("sweet.battery")
 local myram = require("sweet.ram")
 local myvolume = require("sweet.volume")
 
+-- Lock screen
+require("sweet.lockscreen")
+
 -- Create a wibox for each screen and add it
 local taglist_buttons = gears.table.join(
                     awful.button({ }, 1, function(t) t:view_only() end),
@@ -317,8 +320,11 @@ globalkeys = gears.table.join(
     -- Menubar
     awful.key({ modkey }, "p", function() menubar.show() end,
               {description = "show the menubar", group = "launcher"}),
+    -- Other
     awful.key({ modkey }, "d", function () awful.spawn.with_shell("rofi -show drun") end,
-              {description = "rofi drun mode", group = "awesome"})
+              {description = "rofi drun mode", group = "awesome"}),
+    awful.key({ modkey, "Mod1" }, "l", lock_screen_show,
+              {description = "show lock screen", group = "awesome"})
 )
 
 clientkeys = gears.table.join(

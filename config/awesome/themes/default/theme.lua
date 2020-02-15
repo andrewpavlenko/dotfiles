@@ -65,6 +65,8 @@ theme.border_marked = theme.xbackground
 theme.taglist_fg_empty = "#5c6370"
 theme.taglist_fg_urgent = theme.xcolor4
 theme.hotkeys_modifiers_fg = "#5c6370"
+theme.lock_screen_bg = theme.xbackground.."A1"
+theme.lock_screen_fg = theme.xforeground
 
 -- Sweet widgets
 theme.sweet_layout_color = theme.xcolor15
