@@ -36,3 +36,6 @@ set number
 
 " Enable autocomplete
 let g:deoplete#enable_at_startup = 1
+
+" Always show at least one line above/below the cursor.
+set scrolloff=1
