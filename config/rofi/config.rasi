@@ -10,7 +10,7 @@ configuration {
 /*	yoffset: 0;*/
 /*	xoffset: 0;*/
 /*	fixed-num-lines: true;*/
-/*	show-icons: false;*/
+	show-icons: true;
 	terminal: "alacritty";
 /*	ssh-client: "ssh";*/
 /*	ssh-command: "{terminal} -e {ssh-client} {host}";*/
@@ -19,7 +19,7 @@ configuration {
 /*	run-shell-command: "{terminal} -e {cmd}";*/
 /*	window-command: "xkill -id {window}";*/
 /*	window-match-fields: "all";*/
-/*	drun-icon-theme: ;*/
+	drun-icon-theme: "Papirus";
 /*	drun-match-fields: "name,generic,exec,categories";*/
 /*	disable-history: false;*/
 /*	sort: false;*/
@@ -137,3 +137,4 @@ configuration {
 /*	me-accept-entry: "MouseDPrimary";*/
 /*	me-accept-custom: "Control+MouseDPrimary";*/
 }
+/* vim:ft=css
