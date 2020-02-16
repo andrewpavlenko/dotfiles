@@ -45,7 +45,7 @@ theme.fg_urgent     = theme.xforeground
 theme.fg_minimize   = theme.xforeground
 
 theme.useless_gap   = dpi(5)
-theme.border_width  = dpi(1)
+theme.border_width  = 0
 theme.border_normal = theme.xbackground
 theme.border_focus  = theme.xbackground
 theme.border_marked = theme.xbackground
