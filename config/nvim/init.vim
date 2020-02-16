@@ -39,3 +39,13 @@ let g:deoplete#enable_at_startup = 1
 
 " Always show at least one line above/below the cursor.
 set scrolloff=1
+
+" Use spaces to insert a tab
+set expandtab
+
+" Detect indentation
+set autoindent
+set smartindent
+
+" Set tab width
+set shiftwidth=2
