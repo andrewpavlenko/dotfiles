@@ -69,9 +69,10 @@ theme.lock_screen_bg = theme.xbackground.."DF"
 theme.lock_screen_fg = theme.xforeground
 
 -- Sweet widgets
-theme.sweet_layout_color = theme.xcolor7
-theme.sweet_battery_color = theme.xcolor1
-theme.sweet_ram_color = theme.xcolor4
+theme.sweet_layout_color = theme.xforeground
+theme.sweet_battery_color = theme.xforeground
+theme.sweet_ram_color = theme.xforeground
+theme.sweet_volume_color = theme.xforeground
 
 -- Generate taglist squares:
 local taglist_square_size = dpi(4)
