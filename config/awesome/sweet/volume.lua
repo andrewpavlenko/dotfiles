@@ -9,7 +9,7 @@ local color_mute = beautiful.sweet_volume_mute_color or "#5c6370"
 local step = 5
 
 local textbox = wibox.widget.textbox("")
-textbox.font = "Ubuntu Nerd Font 8"
+textbox.font = beautiful.nerd_font
 textbox.markup = helpers.colorize_text(" 0", color)
 
 local function get_volume_state(cb)

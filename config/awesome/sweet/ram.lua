@@ -7,7 +7,7 @@ local gears = require("gears")
 local color = beautiful.sweet_ram_color or "#61afef"
 
 local textbox = wibox.widget.textbox("")
-textbox.font = "Ubuntu Nerd Font 8"
+textbox.font = beautiful.nerd_font
 
 local ram = awful.widget.watch("cat /proc/meminfo", 10, function(widget, stdout)
   local total = stdout:match("MemTotal:%s+(%d+)")
