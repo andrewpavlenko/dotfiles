@@ -104,6 +104,7 @@ theme.menu_width  = dpi(100)
 theme.maximized_hide_border = true
 theme.border_radius = dpi(6)
 theme.wibar_height = dpi(22)
+theme.systray_base_size = dpi(21)
 
 -- Define the image to load
 theme.titlebar_close_button_normal = theme_path.."titlebar/close_normal.png"

@@ -126,6 +126,9 @@ mykeyboardlayout = awful.widget.keyboardlayout()
 -- Create a textclock widget
 mytextclock = wibox.widget.textclock()
 
+mysystray = wibox.widget.systray()
+mysystray:set_base_size(beautiful.systray_base_size)
+
 -- Import some sweet widgets
 local mybattery = require("sweet.battery")
 local myram = require("sweet.ram")
@@ -212,7 +215,7 @@ awful.screen.connect_for_each_screen(function(s)
             myram,
             mybattery,
             mykeyboardlayout,
-            wibox.widget.systray(),
+            mysystray,
             mytextclock,
             s.mylayoutbox,
         },
