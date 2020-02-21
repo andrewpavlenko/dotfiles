@@ -1,5 +1,6 @@
 local gears = require("gears")
 local wibox = require("wibox")
+local beautiful = require("beautiful")
 
 local helpers = {}
 
@@ -27,6 +28,7 @@ helpers.pwrline_wrap = function(widget, symbol, bg, bg_next)
     {
         wibox.container.margin(widget, 5, 5),
         bg     = bg,
+        fg     = beautiful.xbackground,
         widget = wibox.container.background,
     },
     layout = wibox.layout.fixed.horizontal(),

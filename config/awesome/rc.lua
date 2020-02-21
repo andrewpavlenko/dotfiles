@@ -214,9 +214,9 @@ awful.screen.connect_for_each_screen(function(s)
             helpers.pwrline_wrap(myvolume, beautiful.wibar_glyph, beautiful.sweet_volume_bg, beautiful.xbackground),
             helpers.pwrline_wrap(myram, beautiful.wibar_glyph, beautiful.sweet_ram_bg, beautiful.sweet_volume_bg),
             helpers.pwrline_wrap(mybattery, beautiful.wibar_glyph, beautiful.sweet_battery_bg, beautiful.sweet_ram_bg),
-            helpers.pwrline_wrap(mykeyboardlayout, beautiful.wibar_glyph, beautiful.xbackground, beautiful.sweet_battery_bg),
-            mytextclock,
-            helpers.pwrline_wrap(s.mylayoutbox, beautiful.wibar_glyph, beautiful.layoutbox_bg, beautiful.xbackground),
+            helpers.pwrline_wrap(mykeyboardlayout, beautiful.wibar_glyph, "#ec919f", beautiful.sweet_battery_bg),
+            helpers.pwrline_wrap(mytextclock, beautiful.wibar_glyph, "#e7c587", "#ec919f"),
+            helpers.pwrline_wrap(s.mylayoutbox, beautiful.wibar_glyph, beautiful.layoutbox_bg, "#e7c587"),
         },
     }
 end)
