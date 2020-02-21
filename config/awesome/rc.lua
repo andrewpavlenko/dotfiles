@@ -124,7 +124,8 @@ mykeyboardlayout = awful.widget.keyboardlayout()
 
 -- {{{ Wibar
 -- Create a textclock widget
-mytextclock = wibox.widget.textclock()
+mytextclock = wibox.widget.textclock(" %A, %B %d  %R")
+mytextclock.font = beautiful.nerd_font
 
 mysystray = wibox.widget.systray()
 
