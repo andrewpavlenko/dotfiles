@@ -13,7 +13,7 @@ helpers.colorize_text = function(text, color)
     return "<span foreground='" .. color .."'>" .. text .. "</span>"
 end
 
-helpers.pwrline_wrap = function(widget, symbol, bg, bg_next, pad)
+helpers.pwrline_wrap = function(widget, symbol, bg, bg_next)
   local w = wibox.widget {
     {
         {
@@ -25,7 +25,7 @@ helpers.pwrline_wrap = function(widget, symbol, bg, bg_next, pad)
         widget = wibox.container.background,
     },
     {
-        wibox.container.margin(widget, pad, pad),
+        wibox.container.margin(widget, 5, 5),
         bg     = bg,
         widget = wibox.container.background,
     },
