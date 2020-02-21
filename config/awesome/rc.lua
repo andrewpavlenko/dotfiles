@@ -127,7 +127,6 @@ mykeyboardlayout = awful.widget.keyboardlayout()
 mytextclock = wibox.widget.textclock()
 
 mysystray = wibox.widget.systray()
-mysystray:set_base_size(beautiful.systray_base_size)
 
 -- Import some sweet widgets
 local mybattery = require("sweet.battery")
