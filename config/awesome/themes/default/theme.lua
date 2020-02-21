@@ -7,7 +7,7 @@ local xresources = require("beautiful.xresources")
 local xrdb = xresources.get_current_theme()
 local dpi = xresources.apply_dpi
 
-local theme_path = "~/.config/awesome/themes/default/"
+local theme_path = os.getenv("HOME").."/.config/awesome/themes/default/"
 
 local theme = {}
 
@@ -157,6 +157,9 @@ theme.layout_cornerse = theme_path.."layouts/cornersew.png"
 theme.awesome_icon = theme_assets.awesome_icon(
     theme.menu_height, theme.bg_focus, theme.fg_focus
 )
+
+-- Change layout icons color
+theme_assets.recolor_layout(theme, theme.xforeground)
 
 -- Define the icon theme for application icons. If not set then the icons
 -- from /usr/share/icons and /usr/share/icons/hicolor will be used.
