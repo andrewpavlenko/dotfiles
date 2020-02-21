@@ -69,11 +69,18 @@ theme.hotkeys_modifiers_fg = "#5c6370"
 theme.lock_screen_bg = theme.xbackground.."DF"
 theme.lock_screen_fg = theme.xforeground
 
+theme.wibar_glyph = ""
+
 -- Sweet widgets
-theme.sweet_layout_color = theme.xforeground
-theme.sweet_battery_color = theme.xforeground
-theme.sweet_ram_color = theme.xforeground
-theme.sweet_volume_color = theme.xforeground
+theme.sweet_battery_bg = "#61afef"
+theme.sweet_battery_fg = theme.xbackground
+theme.sweet_ram_fg = theme.xbackground
+theme.sweet_ram_bg = "#7dbdf1"
+theme.sweet_volume_bg = "#9accf4"
+theme.sweet_volume_fg = theme.xbackground
+
+theme.layoutbox_bg = theme.xforeground
+theme.layoutbox_fg = theme.xbackground
 
 -- Generate taglist squares:
 local taglist_square_size = dpi(4)
@@ -159,7 +166,7 @@ theme.awesome_icon = theme_assets.awesome_icon(
 )
 
 -- Change layout icons color
-theme_assets.recolor_layout(theme, theme.xforeground)
+theme_assets.recolor_layout(theme, theme.layoutbox_fg)
 
 -- Define the icon theme for application icons. If not set then the icons
 -- from /usr/share/icons and /usr/share/icons/hicolor will be used.

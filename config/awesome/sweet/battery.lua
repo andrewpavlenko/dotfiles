@@ -3,7 +3,7 @@ local awful = require("awful")
 local beautiful = require("beautiful")
 local helpers = require("helpers")
 
-local color = beautiful.sweet_battery_color or "#e06c75"
+local color = beautiful.sweet_battery_fg or "#e06c75"
 
 local textbox = wibox.widget.textbox("")
 textbox.font = beautiful.nerd_font

@@ -211,13 +211,13 @@ awful.screen.connect_for_each_screen(function(s)
         nil, -- Middle widget
         { -- Right widgets
             layout = wibox.layout.fixed.horizontal,
-            myvolume,
-            myram,
-            mybattery,
-            mykeyboardlayout,
             mysystray,
+            helpers.pwrline_wrap(myvolume, beautiful.wibar_glyph, beautiful.sweet_volume_bg, beautiful.xbackground, 5),
+            helpers.pwrline_wrap(myram, beautiful.wibar_glyph, beautiful.sweet_ram_bg, beautiful.sweet_volume_bg, 5),
+            helpers.pwrline_wrap(mybattery, beautiful.wibar_glyph, beautiful.sweet_battery_bg, beautiful.sweet_ram_bg, 5),
+            helpers.pwrline_wrap(mykeyboardlayout, beautiful.wibar_glyph, beautiful.xbackground, beautiful.sweet_battery_bg, 5),
             mytextclock,
-            s.mylayoutbox,
+            helpers.pwrline_wrap(s.mylayoutbox, beautiful.wibar_glyph, beautiful.layoutbox_bg, beautiful.xbackground, 5),
         },
     }
 end)
@@ -462,7 +462,7 @@ awful.rules.rules = {
                      keys = clientkeys,
                      buttons = clientbuttons,
                      screen = awful.screen.preferred,
-                     placement = awful.placement.centered+awful.placement.no_overlap+awful.placement.no_offscreen
+                     placement = awful.placement.no_overlap+awful.placement.no_offscreen
      }
     },
 

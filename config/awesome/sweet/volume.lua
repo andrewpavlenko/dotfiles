@@ -4,8 +4,8 @@ local beautiful = require("beautiful")
 local helpers = require("helpers")
 local gears = require("gears")
 
-local color = beautiful.sweet_volume_color or "#56b6c2"
-local color_mute = beautiful.sweet_volume_mute_color or "#5c6370"
+local color = beautiful.sweet_volume_fg or "#56b6c2"
+local color_mute = beautiful.sweet_volume_mute_fg or "#5c6370"
 local step = 5
 
 local textbox = wibox.widget.textbox("")
@@ -74,16 +74,9 @@ end
 
 get_volume_state(update_widget)
 
-local widget = wibox.widget {
-    textbox,
-    left = 5,
-    right = 5,
-    widget = wibox.container.margin
-}
-
-widget:buttons(gears.table.join(
+textbox:buttons(gears.table.join(
     awful.button({ }, 4, volume_up),
     awful.button({ }, 5, volume_down),
     awful.button({ }, 1, volume_mute)))
 
-return widget
+return textbox

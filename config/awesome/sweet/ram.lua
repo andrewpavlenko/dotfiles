@@ -4,7 +4,7 @@ local beautiful = require("beautiful")
 local helpers = require("helpers")
 local gears = require("gears")
 
-local color = beautiful.sweet_ram_color or "#61afef"
+local color = beautiful.sweet_ram_fg or "#61afef"
 
 local textbox = wibox.widget.textbox("")
 textbox.font = beautiful.nerd_font
@@ -23,14 +23,7 @@ local ram = awful.widget.watch("cat /proc/meminfo", 10, function(widget, stdout)
   widget.markup = helpers.colorize_text(text, color)
 end, textbox)
 
-local widget = wibox.widget {
-    ram,
-    left = 5,
-    right = 5,
-    widget = wibox.container.margin
-}
-
-widget:buttons(gears.table.join(
+ram:buttons(gears.table.join(
     awful.button({ }, 1, function() awful.spawn.with_shell("alacritty -e htop") end)))
 
-return widget
+return ram
