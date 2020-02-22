@@ -37,4 +37,21 @@ helpers.pwrline_wrap = function(widget, symbol, bg, bg_next)
   return w
 end
 
+helpers.build_powerbar = function(widgets, colors)
+    local wids = gears.table.reverse(widgets)
+    local powerbar = {}
+
+    for i, v in ipairs(wids) do
+        local c = colors[i]
+        local nc = colors[i+1]
+        local w = helpers.pwrline_wrap(v, beautiful.wibar_glyph, c, nc)
+        powerbar = gears.table.join(powerbar, { w })
+    end
+
+    powerbar = gears.table.reverse(powerbar)
+    powerbar.layout = wibox.layout.fixed.horizontal
+
+    return powerbar
+end
+
 return helpers

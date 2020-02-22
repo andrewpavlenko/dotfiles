@@ -208,6 +208,19 @@ awful.screen.connect_for_each_screen(function(s)
     -- Create the wibox
     s.mywibox = awful.wibar({ position = "bottom", screen = s, ontop = true })
 
+    -- Widgets that powerbar will contain
+    local powerbar_widgets = {
+        mysystray,
+        myvolume,
+        myram,
+        mybattery,
+        mykeyboardlayout,
+        mytextclock,
+        s.mylayoutbox,
+    }
+
+    local powerbar = helpers.build_powerbar(powerbar_widgets, beautiful.powerbar_colors)
+
     -- Add widgets to the wibox
     s.mywibox:setup {
         layout = wibox.layout.align.horizontal,
@@ -217,16 +230,7 @@ awful.screen.connect_for_each_screen(function(s)
             s.mypromptbox,
         },
         nil, -- Middle widget
-        { -- Right widgets
-            layout = wibox.layout.fixed.horizontal,
-            mysystray,
-            helpers.pwrline_wrap(myvolume, beautiful.wibar_glyph, beautiful.sweet_volume_bg, beautiful.xbackground),
-            helpers.pwrline_wrap(myram, beautiful.wibar_glyph, beautiful.sweet_ram_bg, beautiful.sweet_volume_bg),
-            helpers.pwrline_wrap(mybattery, beautiful.wibar_glyph, beautiful.sweet_battery_bg, beautiful.sweet_ram_bg),
-            helpers.pwrline_wrap(mykeyboardlayout, beautiful.wibar_glyph, "#ec919f", beautiful.sweet_battery_bg),
-            helpers.pwrline_wrap(mytextclock, beautiful.wibar_glyph, "#e7c587", "#ec919f"),
-            helpers.pwrline_wrap(s.mylayoutbox, beautiful.wibar_glyph, beautiful.layoutbox_bg, "#e7c587"),
-        },
+        powerbar, -- Right widgets
     }
 end)
 -- }}}

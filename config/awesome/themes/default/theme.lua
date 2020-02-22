@@ -68,19 +68,24 @@ theme.taglist_fg_urgent = theme.xcolor4
 theme.hotkeys_modifiers_fg = "#5c6370"
 theme.lock_screen_bg = theme.xbackground.."DF"
 theme.lock_screen_fg = theme.xforeground
+theme.sweet_volume_fg = theme.xbackground
 
 theme.wibar_glyph = ""
 
--- Sweet widgets
-theme.sweet_battery_bg = "#61afef"
-theme.sweet_battery_fg = theme.xbackground
-theme.sweet_ram_fg = theme.xbackground
-theme.sweet_ram_bg = "#7dbdf1"
-theme.sweet_volume_bg = "#9accf4"
-theme.sweet_volume_fg = theme.xbackground
-
-theme.layoutbox_bg = theme.xforeground
+-- Color of layout icon
 theme.layoutbox_fg = theme.xbackground
+
+-- Colors of right widgets bar. Will apply from right to left
+theme.powerbar_colors = {
+    theme.xforeground,
+    "#e7c587",
+    "#ec919f",
+    "#61afef",
+    "#7dbdf1",
+    "#9accf4",
+    theme.xbackground,
+    theme.xbackground,
+}
 
 -- Generate taglist squares:
 local taglist_square_size = dpi(4)

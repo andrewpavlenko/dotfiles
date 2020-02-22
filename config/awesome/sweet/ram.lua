@@ -4,8 +4,6 @@ local beautiful = require("beautiful")
 local helpers = require("helpers")
 local gears = require("gears")
 
-local color = beautiful.sweet_ram_fg or "#61afef"
-
 local textbox = wibox.widget.textbox("")
 textbox.font = beautiful.nerd_font
 
@@ -20,7 +18,7 @@ local ram = awful.widget.watch("cat /proc/meminfo", 10, function(widget, stdout)
   local used = math.floor(used_kb / 1024 + 0.5)
 
   local text = " " .. used .. "MB"
-  widget.markup = helpers.colorize_text(text, color)
+  widget.text = text
 end, textbox)
 
 ram:buttons(gears.table.join(
