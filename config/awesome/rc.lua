@@ -357,7 +357,9 @@ globalkeys = gears.table.join(
     awful.key({ modkey }, "d", function () awful.spawn.with_shell("rofi -show drun") end,
               {description = "rofi drun mode", group = "awesome"}),
     awful.key({ modkey, "Mod1" }, "l", lock_screen_show,
-              {description = "show lock screen", group = "awesome"})
+              {description = "show lock screen", group = "awesome"}),
+    awful.key({ }, "Print", function() awful.spawn.with_shell("screenshot.sh") end,
+              {description = "take screenshot", group = "awesome"})
 )
 
 clientkeys = gears.table.join(
