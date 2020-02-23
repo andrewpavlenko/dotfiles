@@ -267,7 +267,7 @@ playlist_disable_highlight_delay = 0
 ##
 #
 #song_columns_list_format = (20)[]{a} (6f)[green]{NE} (50)[white]{t|f:Title} (20)[cyan]{b} (7f)[magenta]{l}
-song_columns_list_format = (20)[]{a} (50)[white]{t|f:Title} (7f)[green]{l}
+song_columns_list_format = (20)[blue]{a} (50)[white]{t|f:Title} (7f)[blue]{l}
 #
 ##### various settings #####
 #
@@ -354,7 +354,7 @@ progressbar_look = "━━━"
 ## Show the "Connected to ..." message on startup
 #connected_message_on_startup = yes
 #
-#titles_visibility = yes
+titles_visibility = no
 #
 #header_text_scrolling = yes
 #
@@ -537,7 +537,7 @@ progressbar_look = "━━━"
 #
 #progressbar_color = black:b
 #
-#progressbar_elapsed_color = green:b
+progressbar_elapsed_color = blue:b
 #
 #statusbar_color = default
 #
