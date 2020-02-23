@@ -30,10 +30,11 @@ local function get_volume_state(cb)
 end
 
 local function update_widget(vol, mute)
+  local text = " "..vol.." %"
   if mute then
-    textbox.markup = helpers.colorize_text(" "..vol, color_mute)
+    textbox.markup = helpers.colorize_text(text, color_mute)
   else
-    textbox.markup = helpers.colorize_text(" "..vol, color)
+    textbox.markup = helpers.colorize_text(text, color)
   end
 end
 
