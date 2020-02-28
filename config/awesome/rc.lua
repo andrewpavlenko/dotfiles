@@ -120,15 +120,7 @@ menubar.utils.terminal = terminal -- Set the terminal for applications that requ
 -- }}}
 
 -- Keyboard map indicator and switcher
-mykeyboardlayout = wibox.widget {
-  {
-      text = " ",
-      font = beautiful.nerd_font,
-      widget = wibox.widget.textbox
-  },
-  awful.widget.keyboardlayout(),
-  layout = wibox.layout.fixed.horizontal
-}
+mykeyboardlayout = awful.widget.keyboardlayout()
 
 -- {{{ Wibar
 -- Create a textclock widget
