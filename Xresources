@@ -4,7 +4,7 @@ Xft.hintstyle: hintslight
 Xft.hinting: 1
 Xft.antialias: 1
 Xft.rgba: rgb
-Xft.dpi: 96
+Xft.dpi: 102
 
 *background: #282c34
 *foreground: #abb2bf
