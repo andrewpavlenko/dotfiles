@@ -128,32 +128,6 @@ theme.border_radius = dpi(6)
 theme.wibar_height = dpi(22)
 
 -- Define the image to load
-theme.titlebar_close_button_normal = theme_path.."titlebar/close_normal.png"
-theme.titlebar_close_button_focus  = theme_path.."titlebar/close_focus.png"
-
-theme.titlebar_minimize_button_normal = theme_path.."titlebar/minimize_normal.png"
-theme.titlebar_minimize_button_focus  = theme_path.."titlebar/minimize_focus.png"
-
-theme.titlebar_ontop_button_normal_inactive = theme_path.."titlebar/ontop_normal_inactive.png"
-theme.titlebar_ontop_button_focus_inactive  = theme_path.."titlebar/ontop_focus_inactive.png"
-theme.titlebar_ontop_button_normal_active = theme_path.."titlebar/ontop_normal_active.png"
-theme.titlebar_ontop_button_focus_active  = theme_path.."titlebar/ontop_focus_active.png"
-
-theme.titlebar_sticky_button_normal_inactive = theme_path.."titlebar/sticky_normal_inactive.png"
-theme.titlebar_sticky_button_focus_inactive  = theme_path.."titlebar/sticky_focus_inactive.png"
-theme.titlebar_sticky_button_normal_active = theme_path.."titlebar/sticky_normal_active.png"
-theme.titlebar_sticky_button_focus_active  = theme_path.."titlebar/sticky_focus_active.png"
-
-theme.titlebar_floating_button_normal_inactive = theme_path.."titlebar/floating_normal_inactive.png"
-theme.titlebar_floating_button_focus_inactive  = theme_path.."titlebar/floating_focus_inactive.png"
-theme.titlebar_floating_button_normal_active = theme_path.."titlebar/floating_normal_active.png"
-theme.titlebar_floating_button_focus_active  = theme_path.."titlebar/floating_focus_active.png"
-
-theme.titlebar_maximized_button_normal_inactive = theme_path.."titlebar/maximized_normal_inactive.png"
-theme.titlebar_maximized_button_focus_inactive  = theme_path.."titlebar/maximized_focus_inactive.png"
-theme.titlebar_maximized_button_normal_active = theme_path.."titlebar/maximized_normal_active.png"
-theme.titlebar_maximized_button_focus_active  = theme_path.."titlebar/maximized_focus_active.png"
-
 theme.wallpaper = theme_path.."wallpaper.jpg"
 
 -- You can use your own layout icons like this:
