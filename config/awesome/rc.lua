@@ -351,7 +351,9 @@ globalkeys = gears.table.join(
     awful.key({ modkey, "Mod1" }, "l", lock_screen_show,
               {description = "show lock screen", group = "awesome"}),
     awful.key({ }, "Print", function() awful.spawn.with_shell("screenshot.sh") end,
-              {description = "take screenshot", group = "awesome"})
+              {description = "take screenshot", group = "awesome"}),
+    awful.key({ modkey }, "e", function() awful.spawn.with_shell("power-menu.sh") end,
+              {description = "show power menu", group = "awesome"})
 )
 
 clientkeys = gears.table.join(
