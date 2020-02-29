@@ -49,3 +49,6 @@ set smartindent
 
 " Enable mouse support
 set mouse=a
+
+" Highlight cursor line
+set cursorline
