@@ -75,6 +75,8 @@ end
 
 get_volume_state(update_widget)
 
+awesome.connect_signal("acpi::headphones", function() get_volume_state(update_widget) end)
+
 textbox:buttons(gears.table.join(
     awful.button({ }, 4, volume_up),
     awful.button({ }, 5, volume_down),

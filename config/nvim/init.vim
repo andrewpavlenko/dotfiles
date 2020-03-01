@@ -42,6 +42,10 @@ set scrolloff=1
 
 " Use spaces to insert a tab
 set expandtab
+" Set tab size
+set tabstop=8
+set shiftwidth=4
+set softtabstop=4
 
 " Detect indentation
 set autoindent

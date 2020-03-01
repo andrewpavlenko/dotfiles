@@ -146,6 +146,8 @@ local myvolume = require("sweet.volume")
 require("sweet.lockscreen")
 -- Notifications module
 require("notifications")
+-- Acpi daemon
+require("acpid")
 
 -- Create a wibox for each screen and add it
 local taglist_buttons = gears.table.join(
