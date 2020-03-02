@@ -141,6 +141,7 @@ mysystray = wibox.widget.systray()
 local mybattery = require("sweet.battery")
 local myram = require("sweet.ram")
 local myvolume = require("sweet.volume")
+local mydisk = require("sweet.disk")
 
 -- Lock screen
 require("sweet.lockscreen")
@@ -215,6 +216,7 @@ awful.screen.connect_for_each_screen(function(s)
     -- Widgets that powerbar will contain
     local powerbar_widgets = {
         mysystray,
+        mydisk,
         myvolume,
         myram,
         mybattery,

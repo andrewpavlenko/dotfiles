@@ -84,6 +84,7 @@ theme.powerbar_colors = {
     "#61afef",
     "#7dbdf1",
     "#9accf4",
+    "#acd5f6",
     theme.xbackground,
     theme.xbackground,
 }
