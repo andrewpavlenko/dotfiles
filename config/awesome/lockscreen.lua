@@ -68,7 +68,7 @@ local day_of_the_week = wibox.widget {
 }
 
 local function update_dotw()
-    day_of_the_week.markup = helpers.colorize_text(day_of_the_week.text, beautiful.xcolor12)
+    day_of_the_week.markup = helpers.colorize_text(day_of_the_week.text, beautiful.xcolor1)
 end
 
 update_dotw()
