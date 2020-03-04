@@ -4,8 +4,8 @@ local beautiful = require("beautiful")
 local helpers = require("helpers")
 local gears = require("gears")
 
-local color = beautiful.sweet_volume_fg or "#56b6c2"
-local color_mute = beautiful.sweet_volume_mute_fg or "#5c6370"
+local color = beautiful.volume_fg or "#56b6c2"
+local color_mute = beautiful.volume_mute_fg or "#5c6370"
 local step = 5
 
 local textbox = wibox.widget.textbox("")

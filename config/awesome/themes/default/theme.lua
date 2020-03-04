@@ -65,29 +65,15 @@ theme.border_marked = theme.xbackground
 -- Example:
 --theme.taglist_bg_focus = "#ff0000"
 theme.taglist_fg_empty = "#5c6370"
-theme.taglist_fg_urgent = theme.xcolor4
+theme.taglist_fg_urgent = theme.xbackground
+theme.taglist_bg_urgent = theme.xforeground
 theme.hotkeys_modifiers_fg = "#5c6370"
 theme.lock_screen_bg = theme.xbackground.."DF"
 theme.lock_screen_fg = theme.xforeground
-theme.sweet_volume_fg = theme.xbackground
-
-theme.wibar_glyph = ""
+theme.volume_fg = theme.xforeground
 
 -- Color of layout icon
-theme.layoutbox_fg = theme.xbackground
-
--- Colors of right widgets bar. Will apply from right to left
-theme.powerbar_colors = {
-    theme.xforeground,
-    "#e7c587",
-    "#ec919f",
-    "#61afef",
-    "#7dbdf1",
-    "#9accf4",
-    "#acd5f6",
-    theme.xbackground,
-    theme.xbackground,
-}
+theme.layoutbox_fg = theme.xforeground
 
 -- Generate taglist squares:
 local taglist_square_size = dpi(4)
