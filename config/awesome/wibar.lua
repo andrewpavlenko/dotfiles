@@ -3,7 +3,33 @@ local gears = require("gears")
 local wibox = require("wibox")
 local beautiful = require("beautiful")
 
+local helpers = require("helpers")
 local text_taglist = require("taglist")
+
+-- Create systray widget
+local mysystray = wibox.widget.systray()
+mysystray:set_base_size(20)
+
+local mysystray_popup = awful.popup {
+    widget = {
+        mysystray,
+        widget = wibox.container.margin,
+        margins = 8
+    },
+    placement = awful.placement.bottom_right+awful.placement.no_offscreen,
+    shape = helpers.rrect(beautiful.border_radius),
+    visible = false,
+}
+
+local mysystray_toggle = wibox.widget.textbox()
+mysystray_toggle.font = "Typicons 10"
+mysystray_toggle.markup = helpers.colorize_text("", beautiful.xcolor0)
+mysystray_toggle.forced_width = 28
+mysystray_toggle.align = "center"
+
+mysystray_toggle:buttons(gears.table.join(
+    awful.button({}, 1, function() mysystray_popup.visible = not mysystray_popup.visible end)
+))
 
 local function set_wallpaper(s)
     -- Wallpaper
@@ -42,6 +68,9 @@ awful.screen.connect_for_each_screen(function(s)
             s.mypromptbox,
         },
         text_taglist, -- Middle widget
-        nil,
+        { -- Right widgets
+            layout = wibox.layout.fixed.horizontal,
+            mysystray_toggle,
+        },
     }
 end)
