@@ -64,25 +64,12 @@ theme.border_marked = theme.xbackground
 -- hotkeys_[bg|fg|border_width|border_color|shape|opacity|modifiers_fg|label_bg|label_fg|group_margin|font|description_font]
 -- Example:
 --theme.taglist_bg_focus = "#ff0000"
-theme.taglist_fg_empty = "#5c6370"
-theme.taglist_fg_urgent = theme.xbackground
-theme.taglist_bg_urgent = theme.xforeground
 theme.hotkeys_modifiers_fg = "#5c6370"
 theme.lock_screen_bg = theme.xbackground.."DF"
 theme.lock_screen_fg = theme.xforeground
-theme.volume_fg = theme.xforeground
 
 -- Color of layout icon
 theme.layoutbox_fg = theme.xforeground
-
--- Generate taglist squares:
-local taglist_square_size = dpi(4)
-theme.taglist_squares_sel = theme_assets.taglist_squares_sel(
-    taglist_square_size, theme.fg_normal
-)
-theme.taglist_squares_unsel = theme_assets.taglist_squares_unsel(
-    taglist_square_size, theme.fg_normal
-)
 
 -- Variables set for theming notifications:
 -- notification_font
@@ -135,9 +122,6 @@ theme.wallpaper = theme_path.."wallpaper.jpg"
 theme.awesome_icon = theme_assets.awesome_icon(
     theme.menu_height, theme.bg_focus, theme.fg_focus
 )
-
--- Change layout icons color
-theme_assets.recolor_layout(theme, theme.layoutbox_fg)
 
 -- Define the icon theme for application icons. If not set then the icons
 -- from /usr/share/icons and /usr/share/icons/hicolor will be used.
