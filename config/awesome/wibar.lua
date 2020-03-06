@@ -19,6 +19,7 @@ local mysystray_popup = awful.popup {
     placement = awful.placement.bottom_right+awful.placement.no_offscreen,
     shape = helpers.rrect(beautiful.border_radius),
     visible = false,
+    ontop = true,
 }
 
 local mysystray_toggle = wibox.widget.textbox()
