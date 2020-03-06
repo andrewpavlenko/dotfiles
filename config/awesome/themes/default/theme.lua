@@ -112,28 +112,24 @@ theme.menu_width  = dpi(100)
 --theme.bg_widget = "#cc0000"
 theme.maximized_hide_border = true
 theme.border_radius = dpi(6)
-theme.wibar_height = dpi(22)
+theme.wibar_height = dpi(30)
+
+-- Noodle Text Taglist
+theme.taglist_text_font = "Typicons 11"
+theme.taglist_text_empty    = {"","","","","","","","","",""}
+theme.taglist_text_occupied = {"","","","","","","","","",""}
+theme.taglist_text_focused  = {"","","","","","","","","",""}
+theme.taglist_text_urgent   = {"","","","","","","","","",""}
+-- theme.taglist_text_urgent   = {"","","","","","","","","",""}
+-- theme.taglist_text_urgent   = {"","","","","","","","","",""}
+
+theme.taglist_text_color_empty    = { theme.xcolor0, theme.xcolor0, theme.xcolor0, theme.xcolor0, theme.xcolor0, theme.xcolor0, theme.xcolor0, theme.xcolor0, theme.xcolor0, theme.xcolor0 }
+theme.taglist_text_color_occupied  = { theme.xcolor1, theme.xcolor2, theme.xcolor3, theme.xcolor4, theme.xcolor5, theme.xcolor6, theme.xcolor1, theme.xcolor2, theme.xcolor3, theme.xcolor4 }
+theme.taglist_text_color_focused  = { theme.xcolor1, theme.xcolor2, theme.xcolor3, theme.xcolor4, theme.xcolor5, theme.xcolor6, theme.xcolor1, theme.xcolor2, theme.xcolor3, theme.xcolor4 }
+theme.taglist_text_color_urgent   = { theme.xcolor9, theme.xcolor10, theme.xcolor11, theme.xcolor12, theme.xcolor13, theme.xcolor14, theme.xcolor9, theme.xcolor10, theme.xcolor11, theme.xcolor12 }
 
 -- Define the image to load
 theme.wallpaper = theme_path.."wallpaper.jpg"
-
--- You can use your own layout icons like this:
-theme.layout_fairh = theme_path.."layouts/fairhw.png"
-theme.layout_fairv = theme_path.."layouts/fairvw.png"
-theme.layout_floating  = theme_path.."layouts/floatingw.png"
-theme.layout_magnifier = theme_path.."layouts/magnifierw.png"
-theme.layout_max = theme_path.."layouts/maxw.png"
-theme.layout_fullscreen = theme_path.."layouts/fullscreenw.png"
-theme.layout_tilebottom = theme_path.."layouts/tilebottomw.png"
-theme.layout_tileleft   = theme_path.."layouts/tileleftw.png"
-theme.layout_tile = theme_path.."layouts/tilew.png"
-theme.layout_tiletop = theme_path.."layouts/tiletopw.png"
-theme.layout_spiral  = theme_path.."layouts/spiralw.png"
-theme.layout_dwindle = theme_path.."layouts/dwindlew.png"
-theme.layout_cornernw = theme_path.."layouts/cornernww.png"
-theme.layout_cornerne = theme_path.."layouts/cornernew.png"
-theme.layout_cornersw = theme_path.."layouts/cornersww.png"
-theme.layout_cornerse = theme_path.."layouts/cornersew.png"
 
 -- Generate Awesome icon:
 theme.awesome_icon = theme_assets.awesome_icon(
