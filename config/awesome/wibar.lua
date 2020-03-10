@@ -47,7 +47,13 @@ volume_bar:buttons(gears.table.join(
       volume.volume_mute(update_volume_bar)
     end)))
 
+-- Init widget state
 volume.get_volume_state(update_volume_bar)
+
+-- Update widget when headphones conneted
+awesome.connect_signal("acpi::headphones", function()
+    volume.get_volume_state(update_volume_bar)
+end)
 
 -- Create systray widget
 local mysystray = wibox.widget.systray()
