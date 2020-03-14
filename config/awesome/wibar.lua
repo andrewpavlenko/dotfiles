@@ -9,30 +9,37 @@ local helpers = require("helpers")
 local volume = require("volume")
 local text_taglist = require("taglist")
 
+local volume_bar_color = beautiful.xcolor11
+local battery_bar_color = beautiful.xcolor1
+
+local function rounded_bar(color)
+    return wibox.widget {
+        max_value     = 100,
+        value         = 0,
+        forced_height = dpi(10),
+        forced_width  = dpi(60),
+        margins       = {
+          top = dpi(10),
+          bottom = dpi(10),
+        },
+        shape         = gears.shape.rounded_bar,
+        border_width  = 0,
+        color         = color,
+        background_color = beautiful.xcolor0,
+        border_color  = beautiful.border_color,
+        widget        = wibox.widget.progressbar,
+    }
+end
+
 -- Volume bar
-local volume_bar = wibox.widget {
-    max_value     = 100,
-    value         = 50,
-    forced_height = dpi(10),
-    forced_width  = dpi(70),
-    margins       = {
-      top = dpi(10),
-      bottom = dpi(10),
-    },
-    shape         = gears.shape.rounded_bar,
-    border_width  = 0,
-    color         = beautiful.xcolor6,
-    background_color = beautiful.xcolor0,
-    border_color  = beautiful.border_color,
-    widget        = wibox.widget.progressbar,
-}
+local volume_bar = rounded_bar(volume_bar_color)
 
 local function update_volume_bar(vol, mute)
     volume_bar.value = vol
     if mute then
         volume_bar.color = beautiful.xforeground
     else
-        volume_bar.color = beautiful.xcolor6
+        volume_bar.color = volume_bar_color
     end
 end
 
@@ -55,6 +62,14 @@ awesome.connect_signal("acpi::headphones", function()
     volume.get_volume_state(update_volume_bar)
 end)
 
+-- Battery bar
+local battery_bar = rounded_bar(battery_bar_color)
+
+local battery_widget = awful.widget.watch("cat /sys/class/power_supply/BAT1/capacity", 20, function(widget, stdout)
+  local out = stdout:match("^%s*(.-)%s*$")
+  widget.value = tonumber(out)
+end, battery_bar)
+
 -- Create systray widget
 local mysystray = wibox.widget.systray()
 mysystray:set_base_size(20)
@@ -74,7 +89,7 @@ local mysystray_popup = awful.popup {
 local mysystray_toggle = wibox.widget.textbox()
 mysystray_toggle.font = "Typicons 10"
 mysystray_toggle.markup = helpers.colorize_text("", beautiful.xcolor0)
-mysystray_toggle.forced_width = 28
+mysystray_toggle.forced_width = dpi(28)
 mysystray_toggle.align = "center"
 
 mysystray_toggle:buttons(gears.table.join(
@@ -102,7 +117,12 @@ awful.screen.connect_for_each_screen(function(s)
         text_taglist, -- Middle widget
         { -- Right widgets
             layout = wibox.layout.fixed.horizontal,
-            volume_bar,
+            {
+                layout = wibox.layout.fixed.horizontal,
+                spacing = dpi(10),
+                volume_bar,
+                battery_widget,
+            },
             mysystray_toggle,
         },
     }
