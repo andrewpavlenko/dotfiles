@@ -73,7 +73,7 @@ gears.table.join(
 ))
 
 -- Shorter names (eg. tf = text_focused) to save space
-local tf, tu, to, te, tcf, tcu, tco, tce;
+local tf, tu, to, te, cf, cu, co, ce;
 -- Set fallback values if needed
 if beautiful.taglist_text_focused then
     tf = beautiful.taglist_text_focused
