@@ -247,6 +247,18 @@ end
 client.connect_signal("property::fullscreen", no_round_corners)
 client.connect_signal("property::maximized", no_round_corners)
 
+-- Do not draw wibar above fullscreen windows
+local function no_wibar_ontop(c)
+    if c.fullscreen then
+        c.screen.mywibox.ontop = false
+    else
+        c.screen.mywibox.ontop = true
+    end
+end
+
+client.connect_signal("property::fullscreen", no_wibar_ontop)
+client.connect_signal("focus", no_wibar_ontop)
+
 -- Enable sloppy focus, so that focus follows mouse.
 client.connect_signal("mouse::enter", function(c)
     c:emit_signal("request::activate", "mouse_enter", {raise = false})
