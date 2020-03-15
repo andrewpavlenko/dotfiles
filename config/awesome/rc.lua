@@ -22,9 +22,6 @@ require("awful.hotkeys_popup.keys")
 local debian = require("debian.menu")
 local has_fdo, freedesktop = pcall(require, "freedesktop")
 
--- Helper functions
-local helpers = require("helpers")
-
 -- {{{ Error handling
 -- Check if awesome encountered an error during startup and fell back to
 -- another config (This code will only ever execute for the fallback config)
@@ -52,7 +49,7 @@ end
 
 -- {{{ Variable definitions
 -- Themes define colours, icons, font and wallpapers.
-beautiful.init(os.getenv("HOME").."/.config/awesome/themes/default/theme.lua")
+beautiful.init(os.getenv("HOME") .. "/.config/awesome/themes/default/theme.lua")
 
 -- This is used later as the default terminal and editor to run.
 terminal = "alacritty"
@@ -69,7 +66,7 @@ modkey = "Mod4"
 -- Table of layouts to cover with awful.layout.inc, order matters.
 awful.layout.layouts = {
     awful.layout.suit.floating,
-    -- awful.layout.suit.tile,
+    awful.layout.suit.tile,
     -- awful.layout.suit.tile.left,
     -- awful.layout.suit.tile.bottom,
     -- awful.layout.suit.tile.top,
@@ -86,6 +83,11 @@ awful.layout.layouts = {
     -- awful.layout.suit.corner.se,
 }
 -- }}}
+
+-- Load modules
+require("wibar")
+require("notifications")
+require("acpid")
 
 -- {{{ Menu
 -- Create a launcher widget and a main menu
@@ -115,19 +117,14 @@ else
     })
 end
 
+mylauncher = awful.widget.launcher({ image = beautiful.awesome_icon,
+                                     menu = mymainmenu })
+
 -- Menubar configuration
 menubar.utils.terminal = terminal -- Set the terminal for applications that require it
 -- }}}
 
--- Lock screen
-require("lockscreen")
--- Notifications module
-require("notifications")
--- Acpi daemon
-require("acpid")
--- Wibar
-require("wibar")
-
+-- {{{ Wibar
 local function set_wallpaper(s)
     -- Wallpaper
     if beautiful.wallpaper then
@@ -140,11 +137,17 @@ local function set_wallpaper(s)
     end
 end
 
--- Set wallpaper
-awful.screen.connect_for_each_screen(set_wallpaper)
-
 -- Re-set wallpaper when a screen's geometry changes (e.g. different resolution)
 screen.connect_signal("property::geometry", set_wallpaper)
+
+awful.screen.connect_for_each_screen(function(s)
+    -- Wallpaper
+    set_wallpaper(s)
+
+    -- Each screen has its own tag table.
+    awful.tag({ "1", "2", "3", "4", "5", "6", "7", "8", "9" }, s, awful.layout.layouts[1])
+end)
+-- }}}
 
 -- {{{ Mouse bindings
 root.buttons(gears.table.join(
@@ -253,16 +256,7 @@ globalkeys = gears.table.join(
               {description = "lua execute prompt", group = "awesome"}),
     -- Menubar
     awful.key({ modkey }, "p", function() menubar.show() end,
-              {description = "show the menubar", group = "launcher"}),
-    -- Other
-    awful.key({ modkey }, "d", function () awful.spawn.with_shell("rofi -show drun") end,
-              {description = "rofi drun mode", group = "awesome"}),
-    awful.key({ modkey, "Mod1" }, "l", lock_screen_show,
-              {description = "show lock screen", group = "awesome"}),
-    awful.key({ }, "Print", function() awful.spawn.with_shell("screenshot.sh") end,
-              {description = "take screenshot", group = "awesome"}),
-    awful.key({ modkey }, "e", function() awful.spawn.with_shell("power-menu.sh") end,
-              {description = "show power menu", group = "awesome"})
+              {description = "show the menubar", group = "launcher"})
 )
 
 clientkeys = gears.table.join(
@@ -426,7 +420,7 @@ awful.rules.rules = {
 
     -- Add titlebars to normal clients and dialogs
     { rule_any = {type = { "normal", "dialog" }
-      }, properties = { titlebars_enabled = false }
+}, properties = { titlebars_enabled = false }
     },
 
     -- Set Firefox to always map on the tag named "2" on screen 1.
@@ -448,32 +442,10 @@ client.connect_signal("manage", function (c)
         -- Prevent clients from being unreachable after screen count changes.
         awful.placement.no_offscreen(c)
     end
-
-    -- Round corners
-    if not c.fullscreen and not c.maximized then
-        c.shape = helpers.rrect(beautiful.border_radius)
-    end
 end)
-
--- Do not roud corners for fullscreen and maximized clients
-local function no_round_corners (c)
-    if c.fullscreen or c.maximized then
-        c.shape = gears.shape.rectangle
-    else
-        c.shape = helpers.rrect(beautiful.border_radius)
-    end
-end
-
-client.connect_signal("property::fullscreen", no_round_corners)
-client.connect_signal("property::maximized", no_round_corners)
 
 -- Enable sloppy focus, so that focus follows mouse.
 client.connect_signal("mouse::enter", function(c)
     c:emit_signal("request::activate", "mouse_enter", {raise = false})
 end)
-
-client.connect_signal("focus", function(c) c.border_color = beautiful.border_focus end)
-client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_normal end)
 -- }}}
-
-awful.spawn.with_shell("~/.config/awesome/autostart.sh")
