@@ -89,6 +89,7 @@ awful.layout.layouts = {
 require("wibar")
 require("notifications")
 require("acpid")
+require("lockscreen")
 
 -- {{{ Menu
 -- Create a launcher widget and a main menu

@@ -219,6 +219,18 @@ clientbuttons = gears.table.join(
     end)
 )
 
+-- Custom bindings
+globalkeys = gears.table.join(globalkeys,
+    awful.key({ modkey, "Mod1"   }, "l", lock_screen_show,
+              {description = "lock screen", group = "awesome"}),
+    awful.key({ }, "Print", function() awful.spawn.with_shell("screenshot.sh") end,
+              {description = "take screenshot", group = "awesome"}),
+    awful.key({ modkey }, "d", function () awful.spawn.with_shell("rofi -show drun") end,
+              {description = "rofi drun", group = "awesome"}),
+    awful.key({ modkey }, "e", function() awful.spawn.with_shell("power-menu.sh") end,
+              {description = "rofi power", group = "awesome"})
+)
+
 -- Set keys
 root.keys(globalkeys)
 -- }}}
