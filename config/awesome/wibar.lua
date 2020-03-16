@@ -111,7 +111,7 @@ awful.screen.connect_for_each_screen(function(s)
             layout = wibox.layout.fixed.horizontal,
             s.mypromptbox,
         },
-        text_taglist, -- Middle widget
+        text_taglist(s), -- Middle widget
         { -- Right widgets
             layout = wibox.layout.fixed.horizontal,
             {
