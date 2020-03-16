@@ -9,8 +9,8 @@ local helpers = require("helpers")
 local volume = require("volume")
 local text_taglist = require("taglist")
 
-local volume_bar_color = beautiful.xcolor11
-local battery_bar_color = beautiful.xcolor1
+local volume_bar_color = beautiful.xcolor12
+local battery_bar_color = beautiful.xcolor10
 
 local function rounded_bar(color)
     return wibox.widget {
