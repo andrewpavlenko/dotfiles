@@ -74,9 +74,17 @@ end, battery_bar)
 local mysystray = wibox.widget.systray()
 mysystray:set_base_size(20)
 
+local mytextclock = wibox.widget.textclock(" %R")
+mytextclock.font = beautiful.nerd_font
+
 local mysystray_popup = awful.popup {
     widget = {
-        mysystray,
+        {
+            layout = wibox.layout.fixed.horizontal,
+            spacing = dpi(5),
+            mytextclock,
+            mysystray,
+        },
         widget = wibox.container.margin,
         margins = 8
     },
