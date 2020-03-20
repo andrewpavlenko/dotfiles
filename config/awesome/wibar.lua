@@ -7,7 +7,7 @@ local dpi = xresources.apply_dpi
 
 local helpers = require("helpers")
 local volume = require("volume")
-local text_taglist = require("taglist")
+local text_taglist = require("candy.taglist")
 
 local volume_bar_color = beautiful.xcolor12
 local battery_bar_color = beautiful.xcolor10

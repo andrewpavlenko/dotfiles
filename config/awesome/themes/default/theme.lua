@@ -1,12 +1,8 @@
----------------------------
--- Default awesome theme --
----------------------------
-
 local theme_assets = require("beautiful.theme_assets")
 local xresources = require("beautiful.xresources")
-local gears = require("gears")
 local xrdb = xresources.get_current_theme()
 local dpi = xresources.apply_dpi
+local helpers = require("helpers")
 
 local theme_path = os.getenv("HOME").."/.config/awesome/themes/default/"
 
@@ -80,11 +76,10 @@ theme.notification_padding = dpi(10)
 theme.notification_spacing = theme.notification_padding
 theme.notification_margin = dpi(10)
 theme.notification_border_width = 0
+theme.notification_border_radius = dpi(6)
 theme.notification_critical_bg = theme.xcolor1
 theme.notification_critical_fg = theme.xbackground
-theme.notification_shape = function(cr, width, height)
-    gears.shape.rounded_rect(cr, width, height, dpi(6))
-end
+theme.notification_shape = helpers.rrect(theme.notification_border_radius)
 
 -- Variables set for theming the menu:
 -- menu_[bg|fg]_[normal|focus]
