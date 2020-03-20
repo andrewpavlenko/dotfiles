@@ -89,10 +89,11 @@ awful.layout.layouts = {
 -- }}}
 
 -- Load modules
+require("secrets")
 require("wibar")
 require("notifications")
-require("acpid")
 require("candy.lockscreen")
+require("evil")
 
 -- {{{ Menu
 -- Create a launcher widget and a main menu
