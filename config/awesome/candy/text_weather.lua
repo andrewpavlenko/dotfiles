@@ -24,7 +24,7 @@ colors["clear-night"] = beautiful.xcolor1
 colors["clear-day"] = beautiful.xcolor3
 colors["snow"] = beautiful.xcolor6
 
-local weather = wibox.widget.textbox("")
+local weather = wibox.widget.textbox("N/A")
 weather.font = beautiful.nerd_font
 
 awesome.connect_signal("evil::weather", function(temperature, summary, icon)
