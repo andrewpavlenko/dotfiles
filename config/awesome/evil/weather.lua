@@ -18,7 +18,8 @@ gears.timer {
                     local response = json.decode(out)
                     local summary = response.currently.summary
                     local temperature = math.floor(response.currently.temperature + 0.5)
-                    awesome.emit_signal("evil::weather", temperature, summary)
+                    local icon = response.currently.icon
+                    awesome.emit_signal("evil::weather", temperature, summary, icon)
                 end
             end
         )
