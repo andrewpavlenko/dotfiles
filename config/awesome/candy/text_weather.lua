@@ -7,14 +7,38 @@ local weather_temperature_symbol = "°C"
 local icons = {}
 icons["clear-day"] = ""
 icons["clear-night"] = ""
+icons["rain"] = ""
+icons["snow"] = ""
+icons["sleet"] = ""
+icons["wind"] = "煮"
+icons["fog"] = ""
+icons["cloudy"] = ""
+icons["partly-cloudy-day"] = ""
+icons["partly-cloudy-night"] = ""
+icons["hail"] = "晴"
+icons["thunderstorm"] = ""
+icons["tornado"] = ""
+
+local colors = {}
+colors["clear-night"] = beautiful.xcolor1
+colors["clear-day"] = beautiful.xcolor3
+colors["snow"] = beautiful.xcolor6
 
 local weather = wibox.widget.textbox("")
 weather.font = beautiful.nerd_font
 
 awesome.connect_signal("evil::weather", function(temperature, summary, icon)
-    local icon = icons[icon] or ""
-    local colored_icon = helpers.colorize_text(icon, beautiful.xcolor1)
+    local weather_icon = icons[icon] or ""
+    local color = colors[icon] or beautiful.xcolor4
+    local colored_icon = helpers.colorize_text(weather_icon, color)
     weather.markup = colored_icon.." "..summary.." "..temperature..weather_temperature_symbol
 end)
 
-return weather
+local text_weather = wibox.widget {
+    weather,
+    left = 6,
+    right = 6,
+    widget = wibox.container.margin
+}
+
+return text_weather
