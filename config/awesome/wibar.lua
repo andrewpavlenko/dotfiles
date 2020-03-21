@@ -10,8 +10,8 @@ local volume = require("volume")
 local text_taglist = require("candy.taglist")
 local text_weather = require("candy.text_weather")
 
-local volume_bar_color = beautiful.xcolor12
-local battery_bar_color = beautiful.xcolor10
+local volume_bar_color = beautiful.xcolor3
+local battery_bar_color = beautiful.xcolor1
 
 local function rounded_bar(color)
     return wibox.widget {
