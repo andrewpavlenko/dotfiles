@@ -35,7 +35,7 @@ end
 -- Volume bar
 local volume_bar = rounded_bar(volume_bar_color)
 
-local function update_volume_bar(vol, mute)
+function update_volume_bar(vol, mute)
     volume_bar.value = vol
     if mute then
         volume_bar.color = beautiful.xforeground

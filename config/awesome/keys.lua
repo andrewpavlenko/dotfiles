@@ -1,6 +1,8 @@
 local gears = require("gears")
 local awful = require("awful")
 
+local volume = require("volume")
+
 -- {{{ Mouse bindings
 root.buttons(gears.table.join(
     awful.button({ }, 3, function () mymainmenu:toggle() end),
@@ -228,7 +230,11 @@ globalkeys = gears.table.join(globalkeys,
     awful.key({ modkey }, "d", function () awful.spawn.with_shell("rofi -show drun") end,
               {description = "rofi drun", group = "awesome"}),
     awful.key({ modkey }, "e", function() awful.spawn.with_shell("power-menu.sh") end,
-              {description = "rofi power", group = "awesome"})
+              {description = "rofi power", group = "awesome"}),
+    awful.key({}, "#123", function() volume.volume_up(update_volume_bar) end,
+              {description = "volume up", group = "audio"}),
+    awful.key({}, "#122", function() volume.volume_down(update_volume_bar) end,
+              {description = "volume down", group = "audio"})
 )
 
 -- Set keys
