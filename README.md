@@ -1,9 +1,6 @@
 ### Dotfiles
 ![screenshot](screenshot.png)
 
-##### Lock screen
-![lock screen](lockscreen.png)
-
 #### Details
 - OS: Ubuntu
 - WM: Awesome
