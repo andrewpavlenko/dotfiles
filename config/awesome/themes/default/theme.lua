@@ -64,9 +64,6 @@ theme.hotkeys_modifiers_fg = "#5c6370"
 theme.lock_screen_bg = theme.xbackground.."DF"
 theme.lock_screen_fg = theme.xforeground
 
--- Color of layout icon
-theme.layoutbox_fg = theme.xforeground
-
 -- Variables set for theming notifications:
 -- notification_font
 -- notification_[bg|fg]
@@ -95,6 +92,9 @@ theme.menu_width  = dpi(100)
 theme.maximized_hide_border = true
 theme.border_radius = dpi(6)
 theme.wibar_height = dpi(30)
+theme.wibar_margin = dpi(10)
+theme.wibar_spacing = dpi(10)
+theme.systray_icon_size = dpi(20)
 
 -- Noodle Text Taglist
 theme.taglist_text_font = "Typicons 11"

@@ -13,6 +13,8 @@ local text_weather = require("candy.text_weather")
 local volume_bar_color = beautiful.xcolor3
 local battery_bar_color = beautiful.xcolor1
 
+local systray_margin = (beautiful.wibar_height-beautiful.systray_icon_size)/2
+
 local function rounded_bar(color)
     return wibox.widget {
         max_value     = 100,
@@ -73,37 +75,14 @@ end, battery_bar)
 
 -- Create systray widget
 local mysystray = wibox.widget.systray()
-mysystray:set_base_size(20)
+mysystray:set_base_size(beautiful.systray_icon_size)
 
-local mytextclock = wibox.widget.textclock(" %R")
-mytextclock.font = beautiful.nerd_font
-
-local mysystray_popup = awful.popup {
-    widget = {
-        {
-            layout = wibox.layout.fixed.horizontal,
-            spacing = dpi(5),
-            mytextclock,
-            mysystray,
-        },
-        widget = wibox.container.margin,
-        margins = 8
-    },
-    placement = awful.placement.bottom_right+awful.placement.no_offscreen,
-    shape = helpers.rrect(beautiful.border_radius),
-    visible = false,
-    ontop = true,
+local mysystray_container = {
+    mysystray,
+    top = systray_margin,
+    bottom = systray_margin,
+    widget = wibox.container.margin
 }
-
-local mysystray_toggle = wibox.widget.textbox()
-mysystray_toggle.font = "Typicons 10"
-mysystray_toggle.markup = helpers.colorize_text("", beautiful.xcolor0)
-mysystray_toggle.forced_width = dpi(28)
-mysystray_toggle.align = "center"
-
-mysystray_toggle:buttons(gears.table.join(
-    awful.button({}, 1, function() mysystray_popup.visible = not mysystray_popup.visible end)
-))
 
 awful.screen.connect_for_each_screen(function(s)
     -- Create a promptbox for each screen
@@ -116,21 +95,29 @@ awful.screen.connect_for_each_screen(function(s)
     s.mywibox:setup {
         layout = wibox.layout.align.horizontal,
         expand = "none",
-        { -- Left widgets
-            layout = wibox.layout.fixed.horizontal,
-            text_weather,
-            s.mypromptbox,
+        {
+            { -- Left widgets
+                layout = wibox.layout.fixed.horizontal,
+                spacing = beautiful.wibar_spacing,
+                text_weather,
+                s.mypromptbox,
+            },
+            left = beautiful.wibar_margin,
+            right = beautiful.wibar_margin,
+            widget = wibox.container.margin,
         },
         text_taglist(s), -- Middle widget
-        { -- Right widgets
-            layout = wibox.layout.fixed.horizontal,
-            {
+        {
+            { -- Right widgets
                 layout = wibox.layout.fixed.horizontal,
-                spacing = dpi(10),
+                spacing = beautiful.wibar_spacing,
+                mysystray_container,
                 volume_bar,
                 battery_widget,
             },
-            mysystray_toggle,
+            left = beautiful.wibar_margin,
+            right = beautiful.wibar_margin,
+            widget = wibox.container.margin,
         },
     }
 end)

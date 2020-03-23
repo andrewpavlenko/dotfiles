@@ -35,11 +35,4 @@ awesome.connect_signal("evil::weather", function(temperature, summary, icon)
     weather.markup = colored_icon.."  "..description
 end)
 
-local text_weather = wibox.widget {
-    weather,
-    left = 8,
-    right = 8,
-    widget = wibox.container.margin
-}
-
-return text_weather
+return weather
