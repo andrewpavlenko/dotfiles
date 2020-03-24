@@ -12,6 +12,7 @@ local text_weather = require("candy.text_weather")
 
 local volume_bar_color = beautiful.xcolor3
 local battery_bar_color = beautiful.xcolor1
+local ram_bar_color = beautiful.xcolor4
 
 local systray_margin = (beautiful.wibar_height-beautiful.systray_icon_size)/2
 
@@ -73,6 +74,19 @@ local battery_widget = awful.widget.watch("cat /sys/class/power_supply/BAT1/capa
   widget.value = tonumber(out)
 end, battery_bar)
 
+-- Ram bar
+local ram_bar = rounded_bar(ram_bar_color)
+
+awful.widget.watch("cat /proc/meminfo", 10, function(widget, stdout)
+  local total = stdout:match("MemTotal:%s+(%d+)")
+  local free = stdout:match("MemFree:%s+(%d+)")
+  local buffers = stdout:match("Buffers:%s+(%d+)")
+  local cached = stdout:match("Cached:%s+(%d+)")
+  local srec = stdout:match("SReclaimable:%s+(%d+)")
+  local used_kb = total - free - buffers - cached - srec
+  widget.value = used_kb / total * 100
+end, ram_bar)
+
 -- Create systray widget
 local mysystray = wibox.widget.systray()
 mysystray:set_base_size(beautiful.systray_icon_size)
@@ -99,6 +113,7 @@ awful.screen.connect_for_each_screen(function(s)
             { -- Left widgets
                 layout = wibox.layout.fixed.horizontal,
                 spacing = beautiful.wibar_spacing,
+                ram_bar,
                 text_weather,
                 s.mypromptbox,
             },
