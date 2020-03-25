@@ -5,18 +5,18 @@ local helpers = require("helpers")
 local weather_temperature_symbol = "°C"
 
 local icons = {}
-icons["clear-day"] = ""
+icons["clear-day"] = ""
 icons["clear-night"] = ""
-icons["rain"] = ""
-icons["snow"] = ""
-icons["sleet"] = ""
+icons["rain"] = "殺"
+icons["snow"] = "流"
+icons["sleet"] = "ﭽ"
 icons["wind"] = "煮"
-icons["fog"] = ""
-icons["cloudy"] = ""
-icons["partly-cloudy-day"] = ""
-icons["partly-cloudy-night"] = ""
+icons["fog"] = "敖"
+icons["cloudy"] = ""
+icons["partly-cloudy-day"] = ""
+icons["partly-cloudy-night"] = ""
 icons["hail"] = "晴"
-icons["thunderstorm"] = ""
+icons["thunderstorm"] = ""
 icons["tornado"] = ""
 
 local colors = {}
