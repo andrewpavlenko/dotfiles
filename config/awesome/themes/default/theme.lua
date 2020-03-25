@@ -2,6 +2,7 @@ local theme_assets = require("beautiful.theme_assets")
 local xresources = require("beautiful.xresources")
 local xrdb = xresources.get_current_theme()
 local dpi = xresources.apply_dpi
+local gcolor = require("gears.color")
 local helpers = require("helpers")
 
 local theme_path = os.getenv("HOME").."/.config/awesome/themes/default/"
@@ -32,13 +33,13 @@ theme.font          = "Ubuntu Medium 8"
 theme.nerd_font     = "Ubuntu Nerd Font Medium 8"
 
 theme.bg_normal     = theme.xbackground
-theme.bg_focus      = theme.xbackground
+theme.bg_focus      = "#4d78cc"
 theme.bg_urgent     = theme.xbackground
 theme.bg_minimize   = theme.xbackground
 theme.bg_systray    = theme.bg_normal
 
 theme.fg_normal     = theme.xforeground
-theme.fg_focus      = theme.xforeground
+theme.fg_focus      = "#ffffff"
 theme.fg_urgent     = theme.xforeground
 theme.fg_minimize   = theme.xforeground
 
@@ -81,9 +82,9 @@ theme.notification_shape = helpers.rrect(theme.notification_border_radius)
 -- Variables set for theming the menu:
 -- menu_[bg|fg]_[normal|focus]
 -- menu_[border_color|border_width]
-theme.menu_submenu_icon = theme_path.."submenu.png"
-theme.menu_height = dpi(15)
-theme.menu_width  = dpi(100)
+theme.menu_submenu_icon = gcolor.recolor_image(theme_path.."arrow.svg", "#4d78cc")
+theme.menu_height = dpi(20)
+theme.menu_width  = dpi(120)
 
 -- You can add as many variables as
 -- you wish and access them by using
