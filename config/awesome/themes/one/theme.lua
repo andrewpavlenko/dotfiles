@@ -5,7 +5,7 @@ local dpi = xresources.apply_dpi
 local gcolor = require("gears.color")
 local helpers = require("helpers")
 
-local theme_path = os.getenv("HOME").."/.config/awesome/themes/default/"
+local theme_path = os.getenv("HOME").."/.config/awesome/themes/one/"
 
 local theme = {}
 
