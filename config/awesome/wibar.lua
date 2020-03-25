@@ -77,7 +77,7 @@ end, battery_bar)
 -- Ram bar
 local ram_bar = rounded_bar(ram_bar_color)
 
-awful.widget.watch("cat /proc/meminfo", 10, function(widget, stdout)
+awful.widget.watch("cat /proc/meminfo", 5, function(widget, stdout)
   local total = stdout:match("MemTotal:%s+(%d+)")
   local free = stdout:match("MemFree:%s+(%d+)")
   local buffers = stdout:match("Buffers:%s+(%d+)")
