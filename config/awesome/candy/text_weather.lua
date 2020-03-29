@@ -22,7 +22,8 @@ icons["tornado"] = ""
 local colors = {}
 colors["clear-night"] = beautiful.xcolor1
 colors["clear-day"] = beautiful.xcolor3
-colors["snow"] = beautiful.xcolor6
+colors["snow"] = beautiful.xcolor7
+colors["cloudy"] = beautiful.xcolor7
 
 local weather = wibox.widget.textbox("N/A")
 weather.font = beautiful.nerd_font
