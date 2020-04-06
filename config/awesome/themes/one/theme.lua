@@ -62,8 +62,9 @@ theme.border_marked = theme.xbackground
 -- Example:
 --theme.taglist_bg_focus = "#ff0000"
 theme.hotkeys_modifiers_fg = "#5c6370"
-theme.lock_screen_bg = theme.xbackground.."DF"
+theme.lock_screen_bg = theme.xbackground.."D1"
 theme.lock_screen_fg = theme.xforeground
+theme.wibar_bg = theme.xbackground
 
 -- Variables set for theming notifications:
 -- notification_font
