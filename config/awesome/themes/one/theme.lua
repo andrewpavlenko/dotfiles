@@ -83,7 +83,6 @@ theme.notification_shape = helpers.rrect(theme.notification_border_radius)
 -- Variables set for theming the menu:
 -- menu_[bg|fg]_[normal|focus]
 -- menu_[border_color|border_width]
-theme.menu_submenu_icon = gcolor.recolor_image(theme_path.."arrow.svg", theme.bg_focus)
 theme.menu_height = dpi(20)
 theme.menu_width  = dpi(120)
 
