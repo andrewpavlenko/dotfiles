@@ -79,6 +79,7 @@ theme.notification_border_radius = dpi(6)
 theme.notification_critical_bg = theme.xcolor1
 theme.notification_critical_fg = theme.xbackground
 theme.notification_shape = helpers.rrect(theme.notification_border_radius)
+theme.notification_icon_size = dpi(38)
 
 -- Variables set for theming the menu:
 -- menu_[bg|fg]_[normal|focus]
@@ -110,6 +111,9 @@ theme.taglist_text_color_empty    = { theme.xcolor0, theme.xcolor0, theme.xcolor
 theme.taglist_text_color_occupied  = { theme.xcolor1, theme.xcolor2, theme.xcolor3, theme.xcolor4, theme.xcolor5, theme.xcolor6, theme.xcolor1, theme.xcolor2, theme.xcolor3, theme.xcolor4 }
 theme.taglist_text_color_focused  = { theme.xcolor1, theme.xcolor2, theme.xcolor3, theme.xcolor4, theme.xcolor5, theme.xcolor6, theme.xcolor1, theme.xcolor2, theme.xcolor3, theme.xcolor4 }
 theme.taglist_text_color_urgent   = { theme.xcolor9, theme.xcolor10, theme.xcolor11, theme.xcolor12, theme.xcolor13, theme.xcolor14, theme.xcolor9, theme.xcolor10, theme.xcolor11, theme.xcolor12 }
+
+-- Icons
+theme.icon_battery_low = theme_path.."icons/low-battery.svg"
 
 -- Define the image to load
 theme.wallpaper = theme_path.."wallpaper.jpg"

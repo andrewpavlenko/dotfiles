@@ -69,10 +69,8 @@ end)
 -- Battery bar
 local battery_bar = rounded_bar(battery_bar_color)
 
-local battery_widget = awful.widget.watch("cat /sys/class/power_supply/BAT1/capacity", 20, function(widget, stdout)
-  local out = stdout:match("^%s*(.-)%s*$")
-  widget.value = tonumber(out)
-end, battery_bar)
+-- Update battery bar value
+awesome.connect_signal("evil::battery", function(capacity) battery_bar.value = capacity end)
 
 -- Ram bar
 local ram_bar = rounded_bar(ram_bar_color)
@@ -128,7 +126,7 @@ awful.screen.connect_for_each_screen(function(s)
                 spacing = beautiful.wibar_spacing,
                 mysystray_container,
                 volume_bar,
-                battery_widget,
+                battery_bar,
             },
             left = beautiful.wibar_margin,
             right = beautiful.wibar_margin,
