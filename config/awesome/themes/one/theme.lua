@@ -101,11 +101,8 @@ theme.systray_icon_size = dpi(20)
 -- Noodle Text Taglist
 theme.taglist_text_font = "Typicons 11"
 theme.taglist_text_empty    = {"","","","","","","","","",""}
--- theme.taglist_text_occupied = {"","","","","","","","","",""}
--- theme.taglist_text_focused  = {"","","","","","","","","",""}
--- theme.taglist_text_urgent   = {"","","","","","","","","",""}
-theme.taglist_text_occupied = {"","","","","","","","","",""}
-theme.taglist_text_focused  = {"","","","","","","","","",""}
+theme.taglist_text_occupied = {"","","","","","","","","",""}
+theme.taglist_text_focused  = {"","","","","","","","","",""}
 theme.taglist_text_urgent   = {"","","","","","","","","",""}
 
 theme.taglist_text_color_empty    = { theme.xcolor0, theme.xcolor0, theme.xcolor0, theme.xcolor0, theme.xcolor0, theme.xcolor0, theme.xcolor0, theme.xcolor0, theme.xcolor0, theme.xcolor0 }
