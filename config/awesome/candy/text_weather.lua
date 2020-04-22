@@ -25,7 +25,7 @@ colors["clear-day"] = beautiful.xcolor3
 colors["snow"] = beautiful.xcolor7
 colors["cloudy"] = beautiful.xcolor7
 colors["partly-cloudy-day"] = beautiful.xcolor7
-colors["partly-cloudy-night"] = beautiful.xcolor1
+colors["partly-cloudy-night"] = beautiful.xcolor7
 
 local weather = wibox.widget.textbox("N/A")
 weather.font = beautiful.nerd_font
