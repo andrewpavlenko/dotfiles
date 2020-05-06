@@ -8,7 +8,6 @@ local dpi = xresources.apply_dpi
 local helpers = require("helpers")
 local volume = require("volume")
 local text_taglist = require("candy.taglist")
-local text_weather = require("candy.text_weather")
 
 local volume_bar_color = beautiful.xcolor3
 local battery_bar_color = beautiful.xcolor1
@@ -112,7 +111,6 @@ awful.screen.connect_for_each_screen(function(s)
                 layout = wibox.layout.fixed.horizontal,
                 spacing = beautiful.wibar_spacing,
                 ram_bar,
-                text_weather,
                 s.mypromptbox,
             },
             left = beautiful.wibar_margin,
