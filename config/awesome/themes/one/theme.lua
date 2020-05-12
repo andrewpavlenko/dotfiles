@@ -107,9 +107,6 @@ theme.tasklist_fg_focus = theme.xforeground
 theme.taglist_fg_empty = "#5c6370"
 theme.taglist_fg_focus = theme.xforeground
 
--- Icons
-theme.icon_battery_low = theme_path.."icons/low-battery.svg"
-
 -- Define the image to load
 theme.wallpaper = theme_path.."wallpaper.jpg"
 
