@@ -33,13 +33,13 @@ theme.font          = "Ubuntu Medium 8"
 theme.nerd_font     = "Ubuntu Nerd Font Medium 8"
 
 theme.bg_normal     = theme.xbackground
-theme.bg_focus      = "#4d78cc"
+theme.bg_focus      = theme.xbackground
 theme.bg_urgent     = theme.xbackground
 theme.bg_minimize   = theme.xbackground
 theme.bg_systray    = theme.bg_normal
 
 theme.fg_normal     = theme.xforeground
-theme.fg_focus      = "#ffffff"
+theme.fg_focus      = theme.xforeground
 theme.fg_urgent     = theme.xforeground
 theme.fg_minimize   = theme.xforeground
 
@@ -98,17 +98,14 @@ theme.wibar_margin = dpi(10)
 theme.wibar_spacing = dpi(10)
 theme.systray_icon_size = dpi(20)
 
--- Noodle Text Taglist
-theme.taglist_text_font = "Typicons 11"
-theme.taglist_text_empty    = {"","","","","","","","","",""}
-theme.taglist_text_occupied = {"","","","","","","","","",""}
-theme.taglist_text_focused  = {"","","","","","","","","",""}
-theme.taglist_text_urgent   = {"","","","","","","","","",""}
+-- Tasklist
+theme.tasklist_disable_icon = true
+theme.tasklist_fg_normal = "#5c6370"
+theme.tasklist_fg_focus = theme.xforeground
 
-theme.taglist_text_color_empty    = { theme.xcolor0, theme.xcolor0, theme.xcolor0, theme.xcolor0, theme.xcolor0, theme.xcolor0, theme.xcolor0, theme.xcolor0, theme.xcolor0, theme.xcolor0 }
-theme.taglist_text_color_occupied  = { theme.xcolor1, theme.xcolor2, theme.xcolor3, theme.xcolor4, theme.xcolor5, theme.xcolor6, theme.xcolor1, theme.xcolor2, theme.xcolor3, theme.xcolor4 }
-theme.taglist_text_color_focused  = { theme.xcolor1, theme.xcolor2, theme.xcolor3, theme.xcolor4, theme.xcolor5, theme.xcolor6, theme.xcolor1, theme.xcolor2, theme.xcolor3, theme.xcolor4 }
-theme.taglist_text_color_urgent   = { theme.xcolor9, theme.xcolor10, theme.xcolor11, theme.xcolor12, theme.xcolor13, theme.xcolor14, theme.xcolor9, theme.xcolor10, theme.xcolor11, theme.xcolor12 }
+-- Taglist
+theme.taglist_fg_empty = "#5c6370"
+theme.taglist_fg_focus = theme.xforeground
 
 -- Icons
 theme.icon_battery_low = theme_path.."icons/low-battery.svg"
@@ -119,6 +116,15 @@ theme.wallpaper = theme_path.."wallpaper.jpg"
 -- Generate Awesome icon:
 theme.awesome_icon = theme_assets.awesome_icon(
     theme.menu_height, theme.bg_focus, theme.fg_focus
+)
+
+-- Generate taglist squares:
+local taglist_square_size = dpi(4)
+theme.taglist_squares_sel = theme_assets.taglist_squares_sel(
+    taglist_square_size, theme.fg_normal
+)
+theme.taglist_squares_unsel = theme_assets.taglist_squares_unsel(
+    taglist_square_size, theme.fg_normal
 )
 
 -- Define the icon theme for application icons. If not set then the icons
