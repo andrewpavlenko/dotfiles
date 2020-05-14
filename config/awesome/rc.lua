@@ -88,8 +88,8 @@ awful.layout.layouts = {
 require("secrets")
 require("wibar")
 require("notifications")
-require("candy.lockscreen")
-require("evil")
+require("lock_screen")
+require("acpid")
 
 -- {{{ Wibar
 local function set_wallpaper(s)

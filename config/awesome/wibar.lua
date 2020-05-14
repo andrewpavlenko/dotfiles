@@ -7,7 +7,6 @@ local dpi = xresources.apply_dpi
 
 local helpers = require("helpers")
 local volume = require("volume")
-local text_taglist = require("candy.taglist")
 
 local volume_bar_color = beautiful.xcolor3
 local battery_bar_color = beautiful.xcolor1
@@ -68,8 +67,10 @@ end)
 -- Battery bar
 local battery_bar = rounded_bar(battery_bar_color)
 
--- Update battery bar value
-awesome.connect_signal("evil::battery", function(capacity) battery_bar.value = capacity end)
+awful.widget.watch("cat /sys/class/power_supply/BAT1/capacity", 30, function(widget, stdout)
+    local capacity = stdout:match("^%s*(.-)%s*$")
+    widget.value = tonumber(capacity)
+end, battery_bar)
 
 -- Ram bar
 local ram_bar = rounded_bar(ram_bar_color)
