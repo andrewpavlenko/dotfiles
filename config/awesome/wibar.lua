@@ -123,7 +123,7 @@ local weather_widget = {
     weather_icon,
     weather_description,
     layout = wibox.layout.fixed.horizontal,
-    spacing = 6
+    spacing = 8
 }
 
 -- Update weather widget
