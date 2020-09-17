@@ -263,7 +263,7 @@ song_status_format = {{%a} - {%t}}|{%f}
 ##
 #
 #song_columns_list_format = (20)[]{a} (6f)[green]{NE} (50)[white]{t|f:Title} (20)[cyan]{b} (7f)[magenta]{l}
-song_columns_list_format = (50)[white]{a} (50)[cyan]{t|f:Title}
+song_columns_list_format = (50)[white]{ar} (50)[cyan]{t|f:Title}
 #
 ##### various settings #####
 #
