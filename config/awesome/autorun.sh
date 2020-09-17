@@ -10,3 +10,6 @@ function run {
 xrdb "$HOME/.Xresources"
 run compton
 run redshift
+
+# Keyboard layout
+setxkbmap -layout "us,ru,ua" -option "grp:alt_shift_toggle"
