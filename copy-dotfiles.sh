@@ -29,7 +29,7 @@ cp -r $HOME/.config/redshift ./config
 cp -r $HOME/.config/rofi ./config
 cp -r $HOME/.config/nvim ./config
 cp -r $HOME/.config/mpd ./config
-cp -r $HOME/.ncmpcpp ./config/ncmpcpp
+cp -r $HOME/.config/ncmpcpp ./config/ncmpcpp
 cp $HOME/.config/compton.conf ./config
 
 # Copy binaries
