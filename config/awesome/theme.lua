@@ -105,9 +105,9 @@ theme.taglist_text_focused  = {"","","","","","","","","
 theme.taglist_text_urgent   = {"","","","","","","","","",""}
 
 theme.taglist_text_color_empty    = { theme.xcolor0, theme.xcolor0, theme.xcolor0, theme.xcolor0, theme.xcolor0, theme.xcolor0, theme.xcolor0, theme.xcolor0, theme.xcolor0, theme.xcolor0 }
-theme.taglist_text_color_occupied  = { theme.xcolor1, theme.xcolor2, theme.xcolor3, theme.xcolor4, theme.xcolor5, theme.xcolor6, theme.xcolor1, theme.xcolor2, theme.xcolor3, theme.xcolor4 }
-theme.taglist_text_color_focused  = { theme.xcolor1, theme.xcolor2, theme.xcolor3, theme.xcolor4, theme.xcolor5, theme.xcolor6, theme.xcolor1, theme.xcolor2, theme.xcolor3, theme.xcolor4 }
-theme.taglist_text_color_urgent   = { theme.xcolor9, theme.xcolor10, theme.xcolor11, theme.xcolor12, theme.xcolor13, theme.xcolor14, theme.xcolor9, theme.xcolor10, theme.xcolor11, theme.xcolor12 }
+theme.taglist_text_color_occupied  = { theme.xcolor1, theme.xcolor6, theme.xcolor3, theme.xcolor4, theme.xcolor5, theme.xcolor6, theme.xcolor1, theme.xcolor2, theme.xcolor3, theme.xcolor4 }
+theme.taglist_text_color_focused  = { theme.xcolor1, theme.xcolor6, theme.xcolor3, theme.xcolor4, theme.xcolor5, theme.xcolor6, theme.xcolor1, theme.xcolor2, theme.xcolor3, theme.xcolor4 }
+theme.taglist_text_color_urgent   = { theme.xcolor9, theme.xcolor14, theme.xcolor11, theme.xcolor12, theme.xcolor13, theme.xcolor14, theme.xcolor9, theme.xcolor10, theme.xcolor11, theme.xcolor12 }
 
 -- Define the image to load
 theme.titlebar_close_button_normal = themes_path.."default/titlebar/close_normal.png"
