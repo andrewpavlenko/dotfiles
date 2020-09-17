@@ -1,30 +1,17 @@
 ### Dotfiles
-![screenshot](screenshot.png)
+Do not ask for help. You're on your own.
 
-#### Details
-- OS: Ubuntu
-- WM: Awesome
-
-#### Dependencies:
+#### Needed packages:
 - pulseaudio - control volume
 - alacritty - terminal
 - redshift - night light
 - compton (chjj) - window compositor
 - scrot - screenshot tool
 - rofi - app launcher
-
-###### Optional
 - acpid - subscribe acpi events
 - cpufrequtils - cpu governor switcher
 - mpd, mpc, ncmpcpp - music player daemon and ncmpcpp client
 - nvim - text editor
-
-#### Fonts:
-- Ubuntu (Interface)
-- Ubuntu Nerd Font (Iconic widgets on wibar)
-- Pacifico and Luckiest Guy (Lock screen)
-- Iosevka (Terminal)
-- Icomoon (Lock screen)
 
 #### Notes:
 The script `copy-dotfiles.sh` is used for copy dotfiles into git working directory. To make this setup work on your system you should copy config files manually.

@@ -1,2 +1,2 @@
 *.log
-secrets.lua
+awesome/secrets.lua
