@@ -9,7 +9,7 @@ local helpers = require("helpers")
 local volume = require("volume")
 local text_taglist = require("taglist")
 
-local volume_bar_color = beautiful.xcolor2
+local volume_bar_color = beautiful.xcolor3
 local battery_bar_color = beautiful.xcolor1
 local ram_bar_color = beautiful.xcolor4
 
