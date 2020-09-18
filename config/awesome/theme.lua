@@ -5,6 +5,7 @@ local xrdb = xresources.get_current_theme()
 
 local gfs = require("gears.filesystem")
 local themes_path = gfs.get_themes_dir()
+local helpers = require("helpers")
 
 local theme = {}
 
@@ -74,6 +75,12 @@ theme.taglist_squares_unsel = theme_assets.taglist_squares_unsel(
 -- notification_[bg|fg]
 -- notification_[width|height|margin]
 -- notification_[border_color|border_width|shape|opacity]
+theme.notification_font = "monospace 9"
+theme.notification_shape = helpers.rrect(dpi(8))
+theme.notification_margin = dpi(10)
+theme.notification_padding = dpi(10)
+theme.notification_spacing = dpi(10)
+theme.notification_border_width = dpi(0)
 
 -- Variables set for theming the menu:
 -- menu_[bg|fg]_[normal|focus]

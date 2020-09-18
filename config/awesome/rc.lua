@@ -86,6 +86,7 @@ awful.layout.layouts = {
 
 -- Load modules
 require("secrets")
+require("notifications")
 require("wibar")
 require("lockscreen")
 require("exitscreen")
