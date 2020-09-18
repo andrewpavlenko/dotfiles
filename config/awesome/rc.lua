@@ -123,6 +123,7 @@ end)
 
 -- {{{ Mouse bindings
 root.buttons(gears.table.join(
+    awful.button({ }, 2, exit_screen_show),
     awful.button({ }, 3, function () awful.spawn.with_shell("rofi -show drun") end),
     awful.button({ }, 4, awful.tag.viewnext),
     awful.button({ }, 5, awful.tag.viewprev)
