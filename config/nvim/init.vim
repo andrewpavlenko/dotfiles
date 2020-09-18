@@ -39,3 +39,6 @@ let g:deoplete#enable_at_startup = 1
 
 " Show line numbers
 set number
+
+" Highlight line under cursor
+set cursorline
