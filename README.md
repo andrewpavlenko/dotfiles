@@ -1,5 +1,5 @@
 ### Dotfiles
-Do not ask for help. You're on your own.
+![screenshot](screenshot.png)
 
 #### Needed packages:
 - pulseaudio - control volume
