@@ -9,14 +9,34 @@ Do not ask for help. You're on your own.
 - scrot - screenshot tool
 - rofi - app launcher
 - acpid - subscribe acpi events
-- cpufrequtils - cpu governor switcher
+- cpufrequtils - cpu governor switcher (not used)
 - mpd, mpc, ncmpcpp - music player daemon and ncmpcpp client
 - nvim - text editor
+
+#### Needed fonts:
+- [Pacifico](https://fonts.google.com/specimen/Pacifico)
+- [Luckiest Guy](https://fonts.google.com/specimen/Luckiest+Guy)
+- [Ubuntu](https://design.ubuntu.com/font/)
+- [Typicons](https://github.com/stephenhutchings/typicons.font)
+- [Iosevka](https://github.com/be5invis/Iosevka)
+- [JetBrains Mono](https://www.jetbrains.com/lp/mono)
+- [Icomoon by @elenapan](https://github.com/elenapan/dotfiles)
 
 #### Notes:
 The script `copy-dotfiles.sh` is used for copy dotfiles into git working directory. To make this setup work on your system you should copy config files manually.
 
-#### One Dark Colors
+Awesomewm config folder should contain file `secrets.lua` that is not included in this repository. Here is that file sample contents:
+```
+secrets = {
+    lock_screen_password = "your password",
+    openweather_key = "your token here",
+    -- Your coords. Used by weather widget to determine your location
+    lon = 12.34,
+    lat = 12.34
+}
+```
+
+#### Colors
 - red `#e06c75`
 - green `#98c379`
 - blue `#61afef`
