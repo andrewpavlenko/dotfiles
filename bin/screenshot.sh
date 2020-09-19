@@ -6,5 +6,7 @@ if [[ ! -d $SCREENSHOTS_DIR ]]; then
     mkdir $SCREENSHOTS_DIR
 fi
 
-mv $(scrot -q 100 -e 'echo $f') $SCREENSHOTS_DIR/
-notify-send "Screenshot taken"
+shot=$(scrot -q 100 -e 'echo $f')
+mv $shot $SCREENSHOTS_DIR/
+# notify-send "Screenshot taken"
+awesome-client "awesome.emit_signal(\"awesome::screenshot\", \"$shot\", \"$SCREENSHOTS_DIR/$shot\")"

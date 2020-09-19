@@ -20,6 +20,20 @@ dummy_keyboardlayout_widget:connect_signal("widget::redraw_needed", function ()
     keyboard_notification = naughty.notify({title = "Keyboard layout", text = dummy_keyboardlayout_widget.widget.text:upper():gsub("^%s*(.-)%s*$", "%1"), timeout = 1, replaces_id = keyboard_notification.id})
 end)
 
+-- Screenshot notification
+awesome.connect_signal("awesome::screenshot", function(name, path)
+    naughty.notify({
+        title = "Screenshot taken",
+        text = name,
+        icon = path,
+        icon_size = 80,
+        run = function(notification)
+            notification.die(naughty.notificationClosedReason.dismissedByUser)
+            awful.spawn("feh "..path)
+        end
+    })
+end)
+
 -- naughty.notify({title = "Fuck", text = "You", timeout = 0})
 -- naughty.notify({title = "Fuck", text = "You", timeout = 0})
 -- naughty.notify({title = "Fuck", text = "You", preset = naughty.config.presets.critical})
