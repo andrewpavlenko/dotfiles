@@ -23,7 +23,7 @@ end)
 -- Screenshot notification
 awesome.connect_signal("awesome::screenshot", function(name, path)
     naughty.notify({
-        title = "Screenshot taken",
+        title = "Screenshot saved",
         text = name,
         icon = path,
         icon_size = 80,
