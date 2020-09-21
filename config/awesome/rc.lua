@@ -165,14 +165,6 @@ globalkeys = gears.table.join(
               {description = "focus the previous screen", group = "screen"}),
     awful.key({ modkey,           }, "u", awful.client.urgent.jumpto,
               {description = "jump to urgent client", group = "client"}),
-    awful.key({ modkey,           }, "Tab",
-        function ()
-            awful.client.focus.history.previous()
-            if client.focus then
-                client.focus:raise()
-            end
-        end,
-        {description = "go back", group = "client"}),
 
     -- Standard program
     awful.key({ modkey,           }, "Return", function () awful.spawn(terminal) end,
@@ -242,7 +234,7 @@ globalkeys = gears.table.join(
     -- Rofi
     awful.key({ modkey }, "a", function() awful.spawn.with_shell("rofi -show drun") end,
               {description = "rofi drun", group = "awesome"}),
-    awful.key({ modkey }, "w", function() awful.spawn.with_shell("rofi -show window") end,
+    awful.key({ modkey }, "Tab", function() awful.spawn.with_shell("rofi -show window") end,
               {description = "rofi window", group = "awesome"})
 )
 
