@@ -95,7 +95,7 @@ theme.menu_width  = dpi(100)
 -- beautiful.variable in your rc.lua
 --theme.bg_widget = "#cc0000"
 theme.hotkeys_modifiers_fg = "#5c6370"
-theme.lock_screen_bg = theme.xbackground.."F2"
+theme.lock_screen_bg = theme.xbackground.."BF"
 theme.lock_screen_fg = theme.xforeground
 theme.exit_screen_bg = theme.lock_screen_bg
 theme.exit_screen_fg = theme.lock_screen_fg
