@@ -36,6 +36,11 @@ secrets = {
 }
 ```
 
+Also this environment variable should be exported before running awesome
+```
+export AWESOME_HOME="$HOME/.config/awesome"
+```
+
 #### Colors
 - red `#e06c75`
 - green `#98c379`
