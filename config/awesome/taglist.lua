@@ -7,7 +7,7 @@ local wibox = require("wibox")
 
 local helpers = require("helpers")
 
-local ntags = 9
+local ntags = 10
 
 local function taglist(s)
     -- Create textboxes and set their buttons
