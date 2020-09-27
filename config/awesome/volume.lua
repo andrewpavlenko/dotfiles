@@ -34,7 +34,7 @@ volume.volume_up = function()
     end
 
     os.execute("pactl set-sink-volume @DEFAULT_SINK@ "..next_vol.."%")
-    awesome.emit_signal("evil::volume", next_vol, mute)
+    -- awesome.emit_signal("evil::volume", next_vol, mute)
   end)
 end
 
@@ -47,7 +47,7 @@ volume.volume_down = function()
     end
 
     os.execute("pactl set-sink-volume @DEFAULT_SINK@ "..next_vol.."%")
-    awesome.emit_signal("evil::volume", next_vol, mute)
+    -- awesome.emit_signal("evil::volume", next_vol, mute)
   end)
 end
 
@@ -56,7 +56,7 @@ volume.volume_mute = function()
     local next_mute = mute and 0 or 1
     local next_mute_bool = not mute
     os.execute("pactl set-sink-mute @DEFAULT_SINK@ "..next_mute)
-    awesome.emit_signal("evil::volume", vol, next_mute_bool)
+    -- awesome.emit_signal("evil::volume", vol, next_mute_bool)
   end)
 end
 
