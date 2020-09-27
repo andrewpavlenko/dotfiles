@@ -112,6 +112,7 @@ weather_icon_map["03d"] = { icon = "" }
 weather_icon_map["03n"] = weather_icon_map["03d"]
 weather_icon_map["04d"] = weather_icon_map["03d"]
 weather_icon_map["04n"] = weather_icon_map["03d"]
+weather_icon_map["10n"] = weather_icon_map["10d"]
 
 local weather_icon = wibox.widget.textbox("")
 weather_icon.font = "Typicons 12"
