@@ -42,3 +42,18 @@ set number
 
 " Highlight line under cursor
 set cursorline
+
+" Use 'shiftwidth' when using `<Tab>` in front of a line.
+" By default it's used only for shift commands (`<`, `>`).
+set smarttab
+
+" Indent using four spaces.
+set tabstop=4
+set shiftwidth=4
+set expandtab
+
+" Keep 8 lines above or below the cursor when scrolling.
+set scrolloff=8
+
+" Enable mouse for scrolling and window resizing.
+set mouse=a
