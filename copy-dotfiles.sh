@@ -40,4 +40,7 @@ cp -r $HOME/bin ./
 echo "${blue}> Copy Xresources..${reset}"
 cp $HOME/.Xresources ./Xresources
 
+# Other files
+cp $HOME/.oh-my-zsh/custom/themes/lena.zsh-theme ./
+
 echo "${green}Dotfiles copied.${reset}"
