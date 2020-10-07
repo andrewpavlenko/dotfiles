@@ -1,6 +1,9 @@
 ### Dotfiles
 ![screenshot](screenshot.png)
 
+- OS: Debian
+- WM: awesome
+
 #### Needed packages:
 - pulseaudio - control volume
 - alacritty - terminal
