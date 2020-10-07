@@ -28,6 +28,8 @@
 #### Notes:
 The script `copy-dotfiles.sh` is used for copy dotfiles into git working directory. To make this setup work on your system you should copy config files manually.
 
+Iosevka font must be patched with Font Awesome icons using Nerd Fonts patcher. It requires to make zsh theme draw it's decorations
+
 Awesomewm config folder should contain file `secrets.lua` that is not included in this repository. Here is that file sample contents:
 ```
 secrets = {
