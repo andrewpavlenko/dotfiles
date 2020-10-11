@@ -5,7 +5,7 @@
 decoration="%(?:%F{red}%F{magenta}%F{cyan}%f :%F{red}%f )"
 num_dirs=2 # Use 0 for full path
 truncated_path="%F{white}%$num_dirs~%f "
-background_jobs="%(1j.%F{blue} %f .)"
+background_jobs="%(1j.%F{blue} %f .)"
 
 PROMPT='$truncated_path$background_jobs$(git_prompt_info)$decoration'
 
