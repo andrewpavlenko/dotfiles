@@ -2,10 +2,10 @@
 # Requires Font Awesome icons patched font
 
 # Configuration
-decoration="%(?:%F{red}%F{magenta}%F{cyan}%f :%F{red}%f )"
+bg_jobs="%(1j..)"
+decoration="%(?:%F{red}%F{magenta}%F{cyan}%F{blue}$bg_jobs%f :%F{red}$bg_jobs%f )"
 num_dirs=2 # Use 0 for full path
 truncated_path="%F{white}%$num_dirs~%f "
-background_jobs="%(1j.%F{blue} %f .)"
 
 PROMPT='$truncated_path$background_jobs$(git_prompt_info)$decoration'
 
