@@ -35,7 +35,6 @@ theme.bg_normal     = theme.xbackground
 theme.bg_focus      = theme.bg_normal
 theme.bg_urgent     = theme.bg_normal
 theme.bg_minimize   = theme.bg_normal
-theme.bg_systray    = theme.bg_normal
 
 theme.fg_normal     = theme.xforeground
 theme.fg_focus      = "#ffffff"
@@ -104,6 +103,7 @@ theme.wibar_spacing = dpi(10)
 theme.systray_icon_size = dpi(20)
 theme.corner_radius = dpi(6)
 theme.wibar_bg = "#21252b"
+theme.bg_systray = theme.wibar_bg
 
 -- Noodle Text Taglist
 theme.taglist_text_font = "Typicons 11"
