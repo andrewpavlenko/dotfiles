@@ -57,3 +57,8 @@ set scrolloff=8
 
 " Enable mouse for scrolling and window resizing.
 set mouse=a
+
+" Control-S Save
+nmap <C-S> :w<cr>
+vmap <C-S> <esc>:w<cr>
+imap <C-S> <esc>:w<cr>
