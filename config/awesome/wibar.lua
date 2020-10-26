@@ -49,7 +49,8 @@ end
 volume_bar:buttons(gears.table.join(
     awful.button({ }, 4, volume.volume_up),
     awful.button({ }, 5, volume.volume_down),
-    awful.button({ }, 1, volume.volume_mute)))
+    awful.button({ }, 1, volume.volume_mute),
+    awful.button({ }, 3, function() awful.spawn("pavucontrol") end)))
 
 awesome.connect_signal("evil::volume", update_volume_bar)
 
