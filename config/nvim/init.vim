@@ -6,6 +6,7 @@ call plug#begin(stdpath('data') . '/plugged')
 Plug 'itchyny/lightline.vim'
 Plug 'joshdick/onedark.vim'
 Plug 'sheerun/vim-polyglot'
+Plug 'jiangmiao/auto-pairs'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 
 " Initialize plugin system
