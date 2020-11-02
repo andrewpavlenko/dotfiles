@@ -102,7 +102,7 @@ theme.wibar_height = dpi(30)
 theme.wibar_spacing = dpi(10)
 theme.systray_icon_size = dpi(20)
 theme.corner_radius = dpi(6)
-theme.wibar_bg = "#21252b"
+theme.wibar_bg = theme.bg_normal
 theme.bg_systray = theme.wibar_bg
 
 -- Noodle Text Taglist
