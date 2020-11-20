@@ -114,6 +114,7 @@ weather_icon_map["03n"] = weather_icon_map["03d"]
 weather_icon_map["04d"] = weather_icon_map["03d"]
 weather_icon_map["04n"] = weather_icon_map["03d"]
 weather_icon_map["10n"] = weather_icon_map["10d"]
+weather_icon_map["13n"] = weather_icon_map["13d"]
 
 local weather_icon = wibox.widget.textbox("")
 weather_icon.font = "Typicons 12"
@@ -129,7 +130,9 @@ local weather_widget = {
 }
 
 -- Update weather widget
+-- local naughty = require("naughty")
 awesome.connect_signal("evil::weather", function(temperature, description, icon_code)
+    -- naughty.notify({text = icon_code})
     weather_description.text = description.." "..temperature.."°C"
     local icon = weather_icon_map[icon_code].icon
     local color = weather_icon_map[icon_code].color or beautiful.xcolor4
