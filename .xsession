@@ -1,0 +1,2 @@
+xset -b
+exec awesome
