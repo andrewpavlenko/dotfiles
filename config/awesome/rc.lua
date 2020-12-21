@@ -49,7 +49,7 @@ end
 
 -- {{{ Variable definitions
 -- Themes define colours, icons, font and wallpapers.
-beautiful.init(os.getenv(gears.filesystem.get_configuration_dir() .. "theme.lua")
+beautiful.init(gears.filesystem.get_configuration_dir() .. "theme.lua")
 
 -- This is used later as the default terminal and editor to run.
 terminal = "alacritty"
@@ -92,7 +92,7 @@ require("lockscreen")
 require("exitscreen")
 require("evil.acpid")
 require("evil.pulsed")
-require("weather")
+require("evil.weather")
 
 local helpers = require("helpers")
 local volume = require("volume")
