@@ -507,7 +507,7 @@ client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_n
 -- }}}
 
 -- Execute autorun script
-awful.spawn.with_shell(os.getenv("AWESOME_HOME").."/autorun.sh")
+awful.spawn.with_shell(gears.filesystem.get_configuration_dir().."autorun.sh")
 
 -- Optimize garbage collector
 collectgarbage("setpause", 110)
