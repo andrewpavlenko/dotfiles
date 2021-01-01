@@ -1,20 +1,41 @@
 Xcursor.theme: DMZ-White
 
-*background: #282c34
-*foreground: #abb2bf
-*color0:     #5c6370
-*color1:     #e06c75
-*color2:     #98c379
-*color3:     #e5c07b
-*color4:     #61afef
-*color5:     #c678dd
-*color6:     #56b6c2
-*color7:     #ffffff
-*color8:     #21252b
-*color9:     #e06c75
-*color10:    #98c379
-*color11:    #e5c07b
-*color12:    #61afef
-*color13:    #c678dd
-*color14:    #56b6c2
-*color15:    #ffffff
+#define nord0 #2E3440
+#define nord1 #3B4252
+#define nord2 #434C5E
+#define nord3 #4C566A
+#define nord4 #D8DEE9
+#define nord5 #E5E9F0
+#define nord6 #ECEFF4
+#define nord7 #8FBCBB
+#define nord8 #88C0D0
+#define nord9 #81A1C1
+#define nord10 #5E81AC
+#define nord11 #BF616A
+#define nord12 #D08770
+#define nord13 #EBCB8B
+#define nord14 #A3BE8C
+#define nord15 #B48EAD
+
+*.foreground:   nord4
+*.background:   nord0
+*.cursorColor:  nord4
+*fading: 35
+*fadeColor: nord3
+
+*.color0: nord1
+*.color1: nord11
+*.color2: nord14
+*.color3: nord13
+*.color4: nord9
+*.color5: nord15
+*.color6: nord8
+*.color7: nord5
+*.color8: nord3
+*.color9: nord11
+*.color10: nord14
+*.color11: nord13
+*.color12: nord9
+*.color13: nord15
+*.color14: nord7
+*.color15: nord6
