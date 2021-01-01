@@ -9,10 +9,6 @@ local helpers = require("helpers")
 local volume = require("volume")
 local text_taglist = require("taglist")
 
-local volume_bar_color = beautiful.xcolor3
-local battery_bar_color = beautiful.xcolor1
-local ram_bar_color = beautiful.xcolor4
-
 local systray_margin = (beautiful.wibar_height-beautiful.systray_icon_size)/2
 
 local function rounded_bar(color)
@@ -35,14 +31,14 @@ local function rounded_bar(color)
 end
 
 -- Volume bar
-local volume_bar = rounded_bar(volume_bar_color)
+local volume_bar = rounded_bar(beautiful.volume_bar_color)
 
 function update_volume_bar(vol, mute)
     volume_bar.value = vol
     if mute then
         volume_bar.color = beautiful.xforeground
     else
-        volume_bar.color = volume_bar_color
+        volume_bar.color = beautiful.volume_bar_color
     end
 end
 
@@ -63,7 +59,7 @@ awesome.connect_signal("acpi::headphones", function()
 end)
 
 -- Battery bar
-local battery_bar = rounded_bar(battery_bar_color)
+local battery_bar = rounded_bar(beautiful.battery_bar_color)
 
 awful.widget.watch("cat /sys/class/power_supply/BAT1/capacity", 30, function(widget, stdout)
     local capacity = stdout:match("^%s*(.-)%s*$")
@@ -71,7 +67,7 @@ awful.widget.watch("cat /sys/class/power_supply/BAT1/capacity", 30, function(wid
 end, battery_bar)
 
 -- Ram bar
-local ram_bar = rounded_bar(ram_bar_color)
+local ram_bar = rounded_bar(beautiful.ram_bar_color)
 
 awful.widget.watch("cat /proc/meminfo", 5, function(widget, stdout)
   local total = stdout:match("MemTotal:%s+(%d+)")

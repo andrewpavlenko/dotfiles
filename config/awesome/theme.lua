@@ -105,6 +105,10 @@ theme.corner_radius = dpi(6)
 theme.wibar_bg = theme.bg_normal
 theme.bg_systray = theme.wibar_bg
 
+-- Wibar
+theme.volume_bar_color = theme.xcolor2
+theme.ram_bar_color = theme.xcolor4
+theme.battery_bar_color = theme.xcolor1
 -- Noodle Text Taglist
 theme.taglist_text_font = "Typicons 11"
 theme.taglist_text_empty    = {"","","","","","","","","",""}
