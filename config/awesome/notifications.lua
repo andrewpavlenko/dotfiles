@@ -34,17 +34,6 @@ awesome.connect_signal("awesome::screenshot", function(name, path)
     })
 end)
 
--- Notify when layout chages
-local layout_notification = {}
-awful.screen.connect_for_each_screen(function(s)
-    awful.tag.attached_connect_signal(s, "property::layout", function(t)
-        if not awesome.startup then
-            local name = awful.layout.getname(t.layout)
-            layout_notification = naughty.notify({title = "Layout", text = name, timeout = 1, replaces_id = layout_notification.id})
-        end
-    end)
-end)
-
 -- naughty.notify({title = "Fuck", text = "You", timeout = 0})
 -- naughty.notify({title = "Fuck", text = "You", timeout = 0})
 -- naughty.notify({title = "Fuck", text = "You", preset = naughty.config.presets.critical})

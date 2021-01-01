@@ -139,6 +139,15 @@ awful.screen.connect_for_each_screen(function(s)
     -- Create a promptbox for each screen
     s.mypromptbox = awful.widget.prompt()
 
+    -- Create an imagebox widget which will contain an icon indicating which layout we're using.
+    -- We need one layoutbox per screen.
+    s.mylayoutbox = awful.widget.layoutbox(s)
+    s.mylayoutbox:buttons(gears.table.join(
+                           awful.button({ }, 1, function () awful.layout.inc( 1) end),
+                           awful.button({ }, 3, function () awful.layout.inc(-1) end),
+                           awful.button({ }, 4, function () awful.layout.inc( 1) end),
+                           awful.button({ }, 5, function () awful.layout.inc(-1) end)))
+
     -- Create the wibox
     s.mywibox = awful.wibar({ position = "bottom", screen = s, ontop = true })
 
@@ -167,6 +176,12 @@ awful.screen.connect_for_each_screen(function(s)
                 volume_bar,
                 ram_bar,
                 battery_bar,
+                {
+                    s.mylayoutbox,
+                    top = dpi(8),
+                    bottom = dpi(8),
+                    widget = wibox.container.margin,
+                }
             },
             left = beautiful.wibar_spacing,
             right = beautiful.wibar_spacing,
