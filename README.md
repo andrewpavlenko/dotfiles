@@ -40,17 +40,3 @@ secrets = {
     lat = 12.34
 }
 ```
-
-#### Colors
-- red `#e06c75`
-- green `#98c379`
-- blue `#61afef`
-- yellow `#e5c07b`
-- purple `#c678dd`
-- cyan `#56b6c2`
-- text `#abb2bf`
-- comments `#5c6370`
-- background `#282c34`
-- background dark `#21252b`
-- background selected `#4d78cc`
-- text selected `#ffffff`
