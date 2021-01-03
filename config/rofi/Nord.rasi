@@ -8,13 +8,14 @@
     orange:                      #D08770;
     teal:                        #8FBCBB;
     lightblue:                   #81A1C1;
+    magenta:                     #B48EAD;
     spacing:                     0;
     border-color:                @background;
     separatorcolor:              @background;
     normal-background:           @background;
     normal-foreground:           @foreground;
     urgent-background:           @lightbg;
-    urgent-foreground:           @orange;
+    urgent-foreground:           @magenta;
     active-background:           @lightbg;
     active-foreground:           @lightblue;
     selected-normal-background:  @teal;
