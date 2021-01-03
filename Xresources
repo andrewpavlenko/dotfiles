@@ -26,7 +26,7 @@ Xcursor.theme: DMZ-White
 *.color0: nord1
 *.color1: nord11
 *.color2: nord14
-*.color3: nord13
+*.color3: nord12
 *.color4: nord9
 *.color5: nord15
 *.color6: nord8
@@ -34,7 +34,7 @@ Xcursor.theme: DMZ-White
 *.color8: nord3
 *.color9: nord11
 *.color10: nord14
-*.color11: nord13
+*.color11: nord12
 *.color12: nord9
 *.color13: nord15
 *.color14: nord7
