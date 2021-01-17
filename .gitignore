@@ -5,3 +5,4 @@ wallpaper.jpg
 wallpaper.png
 config/alacritty
 fonts/**/.uuid
+.nvimlog
