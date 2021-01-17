@@ -5,7 +5,6 @@ call plug#begin(stdpath('data') . '/plugged')
 
 Plug 'itchyny/lightline.vim'
 Plug 'joshdick/onedark.vim'
-Plug 'arcticicestudio/nord-vim'
 Plug 'sheerun/vim-polyglot'
 Plug 'jiangmiao/auto-pairs'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
@@ -31,10 +30,10 @@ endif
 
 " Set colorscheme
 let g:lightline = {
-      \ 'colorscheme': 'nord',
+      \ 'colorscheme': 'one',
       \ }
 
-colorscheme nord
+colorscheme onedark
 
 " Enable autocomplete
 let g:deoplete#enable_at_startup = 1
